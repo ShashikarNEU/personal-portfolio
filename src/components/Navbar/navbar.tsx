@@ -13,7 +13,7 @@ const Navbar = () => {
       <a className={styles.title} href="/">Portfolio</a>
 
       <div className={styles.menu}>
-        <img className={styles.menuBtn} src={menuOpen ? menuIcon : closeIcon} onClick={() => {setMenuOpen(!menuOpen)}} alt="menu-button" />
+        <img className={styles.menuBtn} src={!menuOpen ? menuIcon : closeIcon} onClick={() => {setMenuOpen(!menuOpen)}} alt="menu-button" />
         <ul className={`${styles.menuItems} ${menuOpen && styles.menuOpen}`}>
           <li><a href="#about">About</a></li>
           <li><a href="#experience">Experience</a></li>

@@ -2,91 +2,85 @@
 
 .container {
   position: relative;
-  background-color: rgba(12, 12, 12, 0.6);
-  border-radius: 15px;
-  padding: 73px;
-  margin-top: 129px;
-  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 59px;
   margin-left: 10%;
   margin-right: 10%;
-}
-
-.title {
-  color: var(--color-text);
-  font-size: 35px;
-  font-weight: 700;
-  letter-spacing: 1.75px;
-  text-transform: uppercase;
+  z-index: 1;
 }
 
 .content {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.aboutImage {
-  width: 35%;
-}
-
-.aboutItems {
-  color: var(--color-text);
-  display: flex;
   flex-direction: column;
-  gap: 50px;
+  align-items: flex-start;
+  color: var(--color-text);
+  z-index: 1;
 }
 
-.aboutItem {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-radius: 20px;
-  list-style: none;
-  padding: 25px;
-  background-image: linear-gradient(
+.title {
+  font-size: 58px;
+  font-weight: 900;
+  margin-bottom: 33px;
+  font-family: var(--font-roboto);
+  background: linear-gradient(
     90deg,
-    rgba(165, 215, 232, 0.42) 0%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 0) 120%
   );
-  background-size: 0 100%;
-  background-repeat: no-repeat;
-  transition: 0.4s;
+  color: #b5cae5;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text; 
 }
 
-.aboutItem:hover {
-  background-size: 100% 100%;
+.description {
+  font-size: 25px;
+  font-family: var(--font-roboto);
+  margin-bottom: 45px;
 }
 
-.aboutItem h3 {
+.contactBtn {
+  text-decoration: none;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  border-radius: 100px;
   font-size: 25px;
   font-weight: 600;
+  padding: 17px 26px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  height: 90%;
 }
 
-.aboutItem p {
-  font-size: 25px;
+.heroImg {
+  width: 50%;
+  z-index: 1;
+
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 10px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
 }
 
 @media screen and (max-width: 830px) {
   .container {
-    background-color: transparent;
-    padding-left: 0;
-    padding-right: 0;
+    flex-direction: column-reverse;
   }
 
   .content {
-    flex-direction: column;
-  }
-
-  .aboutImage {
-    display: none;
-  }
-
-  .aboutItems {
-    margin-top: 29px;
-  }
-
-  .aboutItem {
-    padding-left: 0;
-    padding-right: 0;
+    align-items: center;
   }
 }

@@ -3,10 +3,10 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  margin: 0 10%;
   padding-top: 61px;
   z-index: 2;
   align-items: center;
+  margin: 0 10%;
 }
 
 .title {
@@ -27,7 +27,7 @@
 }
 
 .menuBtn {
-  display: block;
+  display: none;
 }
 
 .menuItems a {
