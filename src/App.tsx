@@ -1,6 +1,6 @@
 import React from 'react';
 import About from './components/About/about';
-import Experience from './components/experience';
+import Experience from './components/Experience/experience';
 import Education from './components/education'; 
 import Skills from './components/skills';
 import Projects from './components/projects';

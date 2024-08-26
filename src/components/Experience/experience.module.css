@@ -1,0 +1,76 @@
+@import "../../vars.css";
+
+.container {
+  color: var(--color-text);
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 77px;
+}
+
+.title {
+  color: var(--color-text);
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 1.75;
+  text-transform: capitalize;
+}
+
+.content {
+  margin-top: 14px;
+}
+
+.history {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.historyItem {
+  display: flex;
+  flex-direction: column;
+  background: #19376d;
+  background: linear-gradient(90deg, #19376d 0%, rgba(25, 55, 109, 0) 100%);
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.historyItemDesc {
+  font-family: var(--font-roboto);
+}
+
+.historyItemDetails {
+  font-family: var(--font-roboto);
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 15px;
+}
+
+.fordLogo {
+  width: 95px;
+  height: 65px;
+}
+
+.dohaBankLogo {
+  width: 75px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.historyTitle h3 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.historyTitle p {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.historyItemDesc ul {
+  margin-top: 6px;
+  list-style-position: inside;
+  font-size: 25px;
+  list-style-type: disc;
+  margin-left: 17px;
+}

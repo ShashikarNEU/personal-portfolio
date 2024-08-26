@@ -1,0 +1,31 @@
+[
+  {
+    "role": "Software Development Engineer",
+    "organisation": "Ford Motor Company Private Ltd",
+    "startDate": "July, 2021",
+    "endDate": "July, 2023",
+    "location": "Chennai, India",
+    "experiences": [
+      "Successfully integrated Payments API and Discount REST API into the E-Commerce system, enhancing overall functionality of product-based projects by designing API contracts according to business requirements.",
+      "Implemented REST APIs, developed features, and fixed bugs for various business scenarios, including the creation of a delivery dates REST API, improving user experience and operational effectiveness.",
+      "Designed and implemented a cron job to systematically remove orders with expired delivery dates, optimizing order management processes and maintaining data integrity.",
+      "Conducted comprehensive end-to-end testing using tools such as Postman and BackOffice to validate the functionality and integrity of developed features.",
+      "Utilized Jenkins for streamlined testing and deployment processes, ensuring timely delivery of the latest release."
+    ],
+    "imageLogo": "Ford-Logo-2.png"
+  }
+  ,
+  {
+    "role": "Software Intern",
+    "organisation": "Doha Bank",
+    "startDate": "May, 2019",
+    "endDate": "Aug, 2019",
+    "location": "Doha, Qatar",
+    "experiences": [
+      "Participated in informative sessions with security, network, database, and storage teams, gaining a comprehensive understanding of the bank’s IT department operations.",
+      "Played a key role in refining API responses and actively enhancing overall system functionality.",
+      "Compiled a comprehensive report synthesizing my internship experience, presenting a thorough overview of learning to my mentors."
+    ],
+    "imageLogo": "doha-bank-logo-2.png"
+  }
+]

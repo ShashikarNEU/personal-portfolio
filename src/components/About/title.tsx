@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import styles from './about.module.css';
 
 const Title = () => {
-  const [title, setTitle] = useState('Hi, I am Shashikar Anthoni Raj');
+  const [title, setTitle] = useState('Hi, I am Shashikar Anthoni Raj. A Software Engineer.');
 
   useEffect(() => {
     let index = 0;
