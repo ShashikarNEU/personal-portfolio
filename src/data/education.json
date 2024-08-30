@@ -1,0 +1,20 @@
+[
+  {
+    "school": "Northeastern University, Boston",
+    "degree": "MS in Information Systems",
+    "startDate": "Sept,2023",
+    "endDate": "May,2025 Expected",
+    "place": "Boston, MA",
+    "gpa": "3.7",
+    "imageLogo": "Northeastern-University-Logo.png"
+  },
+  {
+    "school": "National Institute of Technology, Warangal",
+    "degree": "B.Tech in Computer Science Engineering",
+    "startDate": "Sept,2017",
+    "endDate": "May,2021",
+    "place": "Telangana, IN",
+    "gpa": "3.3",
+    "imageLogo": "Northeastern-University-Logo.png"
+  }
+]

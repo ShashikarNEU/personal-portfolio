@@ -28,7 +28,7 @@
   margin-top: 14px;
 }
 
-.history {
+.educationHistory {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -43,10 +43,6 @@
   padding: 24px;
 }
 
-.historyItemDesc {
-  font-family: var(--font-roboto);
-}
-
 .historyItemDetails {
   font-family: var(--font-roboto);
   display: flex;
@@ -55,31 +51,19 @@
   gap: 15px;
 }
 
-.fordLogo {
-  width: 95px;
-  height: 65px;
-}
-
-.dohaBankLogo {
-  width: 75px;
-  height: 60px;
-  object-fit: contain;
-}
-
-.historyTitle h3 {
+.educationHistoryTitle h3 {
   font-size: 30px;
   font-weight: 500;
 }
 
-.historyTitle p {
+.educationHistoryTitle p {
   font-size: 20px;
   font-weight: 300;
 }
 
-.historyItemDesc ul {
-  margin-top: 6px;
-  list-style-position: inside;
-  font-size: 25px;
-  list-style-type: disc;
-  margin-left: 17px;
+.logoStyle {
+  width: 95px;
+  height: 75px;
+  object-fit: contain;
+  border-radius: 0%;
 }
