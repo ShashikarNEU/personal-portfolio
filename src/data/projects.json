@@ -48,6 +48,25 @@
   },
   {
     "id": 3,
+    "title": "Hospital Management System",
+    "date": "Jan 2024 - Apr 2024",
+    "description":
+      "The Hospital Management System (HMS) streamlines hospital operations by managing appointments, patient records, blood donations, and staff details. It features multiple modules for patient, donor, and staff management, with CRUD functionality for all entities. Using PL/SQL scripts, HMS creates and populates tables, sequences, and views for easy data retrieval and analysis. Views include doctor, patient, appointment, and blood inventory information, enabling efficient management of hospital resources and services.",
+    "image":
+      "DmddProject.png",
+    "tags": [
+      "Database Management",
+      "PL/SQL Programming",
+      "CRUD Operations",
+      "Database Security",
+      "Data Relationships"
+    ],
+    "category": "web app",
+    "github": "https://github.com/thejusthom/dmdd-group10",
+    "webapp": "https://github.com/thejusthom/dmdd-group10"
+  },
+  {
+    "id": 4,
     "title": "Amazon Clone",
     "date": "Jun 2023 - Jul 2023",
     "description":
@@ -59,65 +78,52 @@
       "CSS",
       "SASS",
       "JavaScript",
-      "HTML",
-      "CSS",
-      "SASS",
-      "JavaScript",
-      "HTML",
-      "CSS"
+      "DOM Manipulation",
+      "Responsive Design"
     ],
     "category": "web app",
     "github": "https://github.com/ShashikarNEU/javascript-amazon-project",
     "webapp": "https://github.com/ShashikarNEU/javascript-amazon-project"
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Student Management System",
     "date": "Jun 2023 - Jul 2023",
     "description":
       "Developed a Student Management System using Spring MVC, MySQL, and Thymeleaf for dynamic views. The system allows performing CRUD operations (Create, Read, Update, Delete) for student entities with MySQL database integration. It features a user-friendly interface with a navigation bar for seamless navigation across the app. The project is built using Maven and can be accessed locally after configuration.",
     "image":
-      "LocAll.png",
+      "Sms.png",
     "tags": [
-      "Docker",
-      "AWS",
-      "DuckDNS",
-      "Eslint",
-      "Husky",
-      "CI/CD",
-      "React Js",
-      "MongoDb",
-      "Node Js",
-      "Express Js",
-      "Redux"
+      "SpringBoot",
+      "Hibernate",
+      "CRUD Operations",
+      "MySQL",
+      "Thymeleaf",
+      "Maven",
+      "Java",
+      "Web Application"
     ],
     "category": "web app",
     "github": "https://github.com/ShashikarNEU/student-management-system",
     "webapp": "https://github.com/ShashikarNEU/student-management-system"
   },
   {
-    "id": 5,
-    "title": "Trackify",
-    "date": "Jun 2023 - Jul 2023",
+    "id": 6,
+    "title": "2-3 B-Tree Implementation",
+    "date": "Jan 2021 - Apr 2021",
     "description":
-      "Trackify is a web application designed to streamline task management and enhance productivity in the workplace. It provides a user-friendly interface for employers to keep track of their employees' daily work activities and empowers employees to log their tasks efficiently. \\nAdmin Credentials: # Email: testadmin@gmail.com #Password- 123@testadmin, Employee Credentials:\\t#Email: testemployee@gmail.com\\t#Password- 123@Testemployee",
+      "This project implements a 2-3 B-tree data structure in C++, where nodes hold up to 2 keys and have pointers to 3 child nodes. The tree is dynamically managed, with functions for inserting elements, handling overflow, sorting, and maintaining balanced nodes. A level-order traversal is used to print the tree structure. This project simulates how B-trees manage large datasets efficiently, making it a valuable concept in databases and file systems.",
     "image":
-      "LocAll.png",
+      "B-tree.jpg",
     "tags": [
-      "Docker",
-      "AWS",
-      "DuckDNS",
-      "Eslint",
-      "Husky",
-      "CI/CD",
-      "React Js",
-      "MongoDb",
-      "Node Js",
-      "Express Js",
-      "Redux"
+      "C++ Programming",
+      "Data Structures",
+      "Algorithms",
+      "Recursion",
+      "Debugging"
     ],
     "category": "web app",
-    "github": "https://github.com/rishavchanda/Trackify",
-    "webapp": "https://trackify.duckdns.org"
+    "github": "https://github.com/Shashikar5/MS-CS-Projects/tree/main/C%2B%2B%20Project-B%20tree",
+    "webapp": "https://github.com/Shashikar5/MS-CS-Projects/tree/main/C%2B%2B%20Project-B%20tree"
   }
 ]

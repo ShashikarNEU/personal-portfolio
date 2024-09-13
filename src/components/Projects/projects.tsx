@@ -21,7 +21,7 @@ const Projects: React.FC<ProjectsProps> = ({ openModal, setOpenModal }) => {
         }
       },
       {
-        threshold: 0.1, // Trigger when 10% of the section is in view
+        threshold: 0.05, // Trigger when 10% of the section is in view
       }
     );
   
