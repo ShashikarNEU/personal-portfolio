@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "title": "LocAll",
+    "date": "Nov 2023 - Dec 2023",
+    "description":
+      "locAll is a community-centric platform designed to connect individuals with local events, marketplace activities, and support initiatives. It offers location-based features like event management, a dynamic marketplace, real-time weather updates, events and a curated feed of local happenings. Additionally, locAll promotes sustainability and community care through food-sharing and donation opportunities, fostering a sense of togetherness within neighborhoods.",
+    "image":
+      "LocAll.png",
+    "tags": [
+      "React Js",
+      "Redux",
+      "Node Js",
+      "Mongo DB",
+      "MUI",
+      "Express Js",
+      "Typescript",
+      "Sass",
+      "REST API"
+    ],
+    "category": "web app",
+    "github": "https://github.com/ShashikarNEU/LocAll_FullStack_Project",
+    "webapp": "https://github.com/ShashikarNEU/LocAll_FullStack_Project"
+  },
+  {
+    "id": 2,
+    "title": "Cloud Web Application",
+    "date": "Jan 2024 - April 2024",
+    "description":
+      "Developed cloud-native web applications using SpringBoot and Hibernate, with Terraform for Infrastructure as Code (IaC) on Google Cloud Platform (GCP). Built and managed resources like VMs, Cloud SQL, and VPCs. Implemented CI pipelines using GitHub Actions for testing and provisioning, and orchestrated a serverless architecture with Google Cloud Functions and Pub/Sub for real-time event-driven notifications. Configured DNS, load balancing, and autoscaling to ensure scalable, robust solutions.",
+    "image":
+      "CloudNativeApplication.png",
+    "tags": [
+      "GCP",
+      "Pub/Sub",
+      "REST API",
+      "Terraform",
+      "Cloud SQL",
+      "CI/CD",
+      "Load balancing",
+      "HCP Packer",
+      "SpringBoot",
+      "Hibernate"
+    ],
+    "category": " cloud web app",
+    "github": "https://github.com/ShashikarA-CSYE6225",
+    "webapp": "https://github.com/ShashikarA-CSYE6225"
+  },
+  {
+    "id": 3,
+    "title": "Amazon Clone",
+    "date": "Jun 2023 - Jul 2023",
+    "description":
+      "Developed an Amazon Front-End Replica that includes key features like a product page, billing page with dynamic delivery options, and an order-tracking page. Users can manage their Wishlist, add or delete items from the cart, and calculate the total bill based on selected delivery options. Built using JavaScript, HTML, and CSS, the project replicates core functionalities of the Amazon website for a seamless shopping experience.",
+    "image":
+      "AmazonClone.png",
+    "tags": [
+      "HTML",
+      "CSS",
+      "SASS",
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "SASS",
+      "JavaScript",
+      "HTML",
+      "CSS"
+    ],
+    "category": "web app",
+    "github": "https://github.com/ShashikarNEU/javascript-amazon-project",
+    "webapp": "https://github.com/ShashikarNEU/javascript-amazon-project"
+  },
+  {
+    "id": 4,
+    "title": "Student Management System",
+    "date": "Jun 2023 - Jul 2023",
+    "description":
+      "Developed a Student Management System using Spring MVC, MySQL, and Thymeleaf for dynamic views. The system allows performing CRUD operations (Create, Read, Update, Delete) for student entities with MySQL database integration. It features a user-friendly interface with a navigation bar for seamless navigation across the app. The project is built using Maven and can be accessed locally after configuration.",
+    "image":
+      "LocAll.png",
+    "tags": [
+      "Docker",
+      "AWS",
+      "DuckDNS",
+      "Eslint",
+      "Husky",
+      "CI/CD",
+      "React Js",
+      "MongoDb",
+      "Node Js",
+      "Express Js",
+      "Redux"
+    ],
+    "category": "web app",
+    "github": "https://github.com/ShashikarNEU/student-management-system",
+    "webapp": "https://github.com/ShashikarNEU/student-management-system"
+  },
+  {
+    "id": 5,
+    "title": "Trackify",
+    "date": "Jun 2023 - Jul 2023",
+    "description":
+      "Trackify is a web application designed to streamline task management and enhance productivity in the workplace. It provides a user-friendly interface for employers to keep track of their employees' daily work activities and empowers employees to log their tasks efficiently. \\nAdmin Credentials: # Email: testadmin@gmail.com #Password- 123@testadmin, Employee Credentials:\\t#Email: testemployee@gmail.com\\t#Password- 123@Testemployee",
+    "image":
+      "LocAll.png",
+    "tags": [
+      "Docker",
+      "AWS",
+      "DuckDNS",
+      "Eslint",
+      "Husky",
+      "CI/CD",
+      "React Js",
+      "MongoDb",
+      "Node Js",
+      "Express Js",
+      "Redux"
+    ],
+    "category": "web app",
+    "github": "https://github.com/rishavchanda/Trackify",
+    "webapp": "https://trackify.duckdns.org"
+  }
+]

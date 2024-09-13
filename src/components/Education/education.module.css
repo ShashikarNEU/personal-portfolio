@@ -37,10 +37,18 @@
 .historyItem {
   display: flex;
   flex-direction: column;
-  background: #19376d;
-  background: linear-gradient(90deg, #19376d 0%, rgba(25, 55, 109, 0) 100%);
-  border-radius: 10px;
-  padding: 24px;
+  background: #17172c;
+  border: 0.1px solid #2d223d;
+  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  border-radius: 16px;
+  padding: 18px 36px;
+  transition: all 0.5s ease-in-out;
+}
+
+.historyItem:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 50px 4px rgba(0, 0, 0, 0.6);
+  filter: brightness(1.1);
 }
 
 .historyItemDetails {
