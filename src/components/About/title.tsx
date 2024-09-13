@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import styles from './about.module.css';
 
 const Title = () => {
-  const titles = ['Full Stack Developer', 'Software Engineer'];
+  const titles = useMemo(() => ['Full Stack Developer', 'Software Engineer'], []); // Memoize titles
   const [currentTitle, setCurrentTitle] = useState('');
   const [titleIndex, setTitleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);

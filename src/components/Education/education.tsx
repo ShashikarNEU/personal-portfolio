@@ -24,8 +24,9 @@ const Education: React.FC = () => {
     }
   
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      const currentSection = sectionRef.current;
+      if (currentSection) {
+        observer.unobserve(currentSection);
       }
     };
   }, []);

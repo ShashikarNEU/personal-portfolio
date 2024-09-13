@@ -24,7 +24,7 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ openModal, setOpenModal
             }}
             onClick={() => setOpenModal({ state: false, project: null })}
           />   
-          <img className={styles.image} src={require(`../../assets/projects/${project.image}`)} alt="project image" />
+          <img className={styles.image} src={require(`../../assets/projects/${project.image}`)} alt="project details" />
           <h2 className={styles.title}>{project.title}</h2>
           <div className={styles.date}>{project.date}</div>
           <div className={styles.tags}>

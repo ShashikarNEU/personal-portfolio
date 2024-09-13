@@ -20,7 +20,7 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, setOpenModal }) => {
   return (
     <div className={styles.card} onClick={() => setOpenModal({ state: true, project })}>
       <div className={styles.image}>
-        <img className={styles.image} src={require(`../../assets/projects/${project.image}`)} alt="project image" />
+        <img className={styles.image} src={require(`../../assets/projects/${project.image}`)} alt="project card" />
       </div>
       <div className={styles.tags}>
         {project.tags.map((tag: string, index: number) => (

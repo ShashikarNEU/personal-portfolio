@@ -3,8 +3,6 @@ import styles from './navbar.module.css';
 import menuIcon from '../../assets/nav/menuIcon.png';
 import closeIcon from '../../assets/nav/closeIcon.png';
 
-import { getImageUrl } from '../../utils';
-
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
