@@ -13,6 +13,7 @@ const Projects: React.FC<ProjectsProps> = ({ openModal, setOpenModal }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentSection = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -25,12 +26,11 @@ const Projects: React.FC<ProjectsProps> = ({ openModal, setOpenModal }) => {
       }
     );
   
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentSection) {
+      observer.observe(currentSection);
     }
   
     return () => {
-      const currentSection = sectionRef.current;
       if (currentSection) {
         observer.unobserve(currentSection);
       }

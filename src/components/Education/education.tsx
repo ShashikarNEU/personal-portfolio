@@ -7,6 +7,7 @@ const Education: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const currentSection = sectionRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -19,12 +20,11 @@ const Education: React.FC = () => {
       }
     );
   
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentSection) {
+      observer.observe(currentSection);
     }
   
     return () => {
-      const currentSection = sectionRef.current;
       if (currentSection) {
         observer.unobserve(currentSection);
       }
