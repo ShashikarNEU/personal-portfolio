@@ -1,6 +1,6 @@
 [
   {
-    "role": "Software Development Engineer",
+    "role": "Software Development Engineer, E-commerce",
     "organisation": "Ford Motor Company Private Ltd",
     "startDate": "July, 2021",
     "endDate": "July, 2023",
@@ -17,15 +17,15 @@
   ,
   {
     "role": "Software Intern",
-    "organisation": "Doha Bank",
-    "startDate": "May, 2019",
-    "endDate": "Aug, 2019",
+    "organisation": "Qubicle",
+    "startDate": "May, 2020",
+    "endDate": "Aug, 2020",
     "location": "Doha, Qatar",
     "experiences": [
-      "Participated in informative sessions with security, network, database, and storage teams, gaining a comprehensive understanding of the bank’s IT department operations.",
+      "Architected a responsive event scheduling platform using React, Redux, Next, Node/Express, and MongoDB, enabling responsive UI rendering and real-time data synchronization.",
       "Played a key role in refining API responses and actively enhancing overall system functionality.",
-      "Compiled a comprehensive report synthesizing my internship experience, presenting a thorough overview of learning to my mentors."
+      "Conducted code reviews, optimized API efficiency, and provided mentorship in debugging and performance improvements across full-stack development tasks."
     ],
-    "imageLogo": "doha-bank-logo-2.png"
+    "imageLogo": "qubicle-logo.png"
   }
 ]

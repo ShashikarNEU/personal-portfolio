@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "LocAll",
-    "date": "Nov 2023 - Dec 2023",
+    "title": "Geo-Aware Community Marketplace",
+    "date": "Nov 2024 - Dec 2024",
     "description":
       "locAll is a community-centric platform designed to connect individuals with local events, marketplace activities, and support initiatives. It offers location-based features like event management, a dynamic marketplace, real-time weather updates, events and a curated feed of local happenings. Additionally, locAll promotes sustainability and community care through food-sharing and donation opportunities, fostering a sense of togetherness within neighborhoods.",
     "image":
@@ -67,7 +67,7 @@
   },
   {
     "id": 4,
-    "title": "Amazon Clone",
+    "title": "Amazon Prototype",
     "date": "Jun 2023 - Jul 2023",
     "description":
       "Developed an Amazon Front-End Replica that includes key features like a product page, billing page with dynamic delivery options, and an order-tracking page. Users can manage their Wishlist, add or delete items from the cart, and calculate the total bill based on selected delivery options. Built using JavaScript, HTML, and CSS, the project replicates core functionalities of the Amazon website for a seamless shopping experience.",

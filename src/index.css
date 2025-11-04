@@ -4,3 +4,49 @@
   margin: 0;
   font-family: "Outfit", Arial, Helvetica, sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #5dd6ac, #2828e9);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2828e9, #5dd6ac);
+}
+
+/* Focus styles for accessibility */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #5dd6ac;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(93, 214, 172, 0.3);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: rgba(93, 214, 172, 0.3);
+  color: #fff;
+}

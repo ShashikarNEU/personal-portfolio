@@ -40,10 +40,21 @@ const Projects: React.FC<ProjectsProps> = ({ openModal, setOpenModal }) => {
   return (
     <section ref={sectionRef} className={`${styles.container} ${isVisible? styles.visible:''}`}>
       <div className={styles.wrapper}>
-        <h2 className={styles.title}>Projects</h2>
+        <div className={styles.header}>
+          <h2 className={styles.title}>Featured Projects</h2>
+          <p className={styles.subtitle}>
+            A collection of projects showcasing my skills in full-stack development, cloud computing, and system design.
+          </p>
+        </div>
         <div className={styles.cardContainer}>
-          {projects.map((project) => (
-            <ProjectCard project={project} setOpenModal={setOpenModal} key={project.id} />
+          {projects.map((project, index) => (
+            <div 
+              key={project.id} 
+              className={`${styles.cardWrapper} ${isVisible ? styles.visible : ''}`}
+              style={{ transitionDelay: `${index * 0.1}s` }}
+            >
+              <ProjectCard project={project} setOpenModal={setOpenModal} />
+            </div>
           ))}
         </div>
       </div>

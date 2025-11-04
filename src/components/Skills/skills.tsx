@@ -34,18 +34,40 @@ const Skills: React.FC = () => {
   return (
    <section className={`${styles.container} ${isVisible ? styles.visible : ''}`} ref={sectionRef}>
       <div className={styles.wrapper}>
-        <h2 className={styles.title}>Skills</h2>
+        <div className={styles.header}>
+          <h2 className={styles.title}>Skills & Technologies</h2>
+          <p className={styles.subtitle}>
+            Technologies and tools I work with to build modern applications.
+          </p>
+        </div>
         <div className={styles.skillsContainer}>
           {skills.map((skill, index) => (
-            <div className={styles.skill} key={index}>
+            <div 
+              className={`${styles.skill} ${isVisible ? styles.visible : ''}`} 
+              key={index}
+              style={{ transitionDelay: `${index * 0.1}s` }}
+            >
               <div className={styles.skillTitle}>{skill.title}</div>
               <div className={styles.skillList}>
-                {skill.skills.map((item, subIndex) => (
-                  <div className={styles.skillItem} key={subIndex}>
-                    <img className={styles.skillImage} src={item.image} alt={item.name} />
-                    {item.name}
-                  </div>
-                ))}
+                 {skill.skills.map((item, subIndex) => (
+                   <div 
+                     className={styles.skillItem} 
+                     key={subIndex}
+                     style={{ transitionDelay: `${(index * 0.15) + (subIndex * 0.08)}s` }}
+                   >
+                     <img 
+                       className={styles.skillImage} 
+                       src={item.image} 
+                       alt={`${item.name} icon`} 
+                       loading="lazy"
+                       onError={(e) => {
+                         const target = e.target as HTMLImageElement;
+                         target.style.display = 'none';
+                       }}
+                     />
+                     <span className={styles.skillName}>{item.name}</span>
+                   </div>
+                 ))}
               </div>
             </div>
           ))}

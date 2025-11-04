@@ -40,13 +40,13 @@ const Experience: React.FC = () => {
               const logoStyle =
               experience.organisation === 'Ford Motor Company Private Ltd'
                 ? styles.fordLogo
-                : experience.organisation === 'Doha Bank'
+                : experience.organisation === 'Qubicle'
                 ? styles.dohaBankLogo
                 : styles.logoStyle;
               return (
                 <li className={styles.historyItem} key={index}>
                   <div className={styles.historyItemDetails}>
-                    <img className={logoStyle} src={require(`../../assets/experience/${experience.imageLogo}`)} alt={`${experience.organisation} logo`} />
+                    <img className={logoStyle} src={require(`../../assets/experience/${experience.imageLogo}`)} alt={`${experience.organisation} logo`} loading="lazy" />
                     <div className={styles.historyTitle}>
                       <h3>{`${experience.role}, ${experience.organisation}`}</h3>
                       <p>{`${experience.startDate} - ${experience.endDate}`}</p>

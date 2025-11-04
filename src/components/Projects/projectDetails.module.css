@@ -52,7 +52,7 @@
 }
 
 .title {
-  font-size: 28px;
+  font-size: 35px;
   font-weight: 600;
   margin: 8px 6px 0px 6px;
 }
@@ -68,6 +68,8 @@
   font-size: 16px;
   font-weight: 400;
   margin: 8px 6px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .image {
@@ -79,7 +81,7 @@
 }
 
 .label {
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 600;
   margin: 8px 6px;
 }
@@ -94,7 +96,7 @@
 }
 
 .tag {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   color: #b7aace;
   background-color: rgba(#854CE6, 0.15);
@@ -124,4 +126,30 @@
   cursor: pointer;
   text-decoration: none;
   transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .date {
+    font-size: 14px;
+  }
+
+  .desc {
+    font-size: 14px;
+  }
+
+  .label {
+    font-size: 20px;
+  }
+
+  .tag {
+    font-size: 12px;
+  }
+
+  .button {
+    font-size: 14px;
+  }
 }

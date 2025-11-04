@@ -1,0 +1,248 @@
+@import "../../vars.css";
+
+.container {
+  color: var(--color-text);
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 77px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  padding: 10px 0px 50px 0;
+  gap: 22px;
+}
+
+.title {
+  color: var(--color-text);
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 1.75px;
+  text-transform: capitalize;
+  margin-bottom: 30px;
+  font-family: var(--font-roboto);
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #5dd6ac, #2828e9);
+  border-radius: 2px;
+}
+
+.desc {
+  font-size: 18px;
+  line-height: 1.8;
+  font-family: var(--font-roboto);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 100%;
+  max-width: 900px;
+  margin-top: 20px;
+}
+
+.contactCard {
+  background: #17172c;
+  border: 0.1px solid #2d223d;
+  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  border-radius: 16px;
+  padding: 40px 32px;
+  transition: all 0.5s ease-in-out;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #5dd6ac, #2828e9);
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.contactCard:hover::before {
+  transform: scaleX(1);
+}
+
+.contactCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 50px 4px rgba(93, 214, 172, 0.2);
+  border-color: rgba(93, 214, 172, 0.3);
+  background: rgba(23, 23, 44, 0.9);
+}
+
+.cardIcon {
+  font-size: 48px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(93, 214, 172, 0.2), rgba(40, 40, 233, 0.2));
+  border: 2px solid rgba(93, 214, 172, 0.3);
+  border-radius: 20px;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.contactCard:hover .cardIcon {
+  background: linear-gradient(135deg, rgba(93, 214, 172, 0.3), rgba(40, 40, 233, 0.3));
+  transform: scale(1.1);
+  border-color: #5dd6ac;
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--color-text);
+  font-family: var(--font-roboto);
+}
+
+.cardSubtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  font-family: var(--font-roboto);
+  min-height: 24px;
+}
+
+.cardLink {
+  font-size: 14px;
+  color: #5dd6ac;
+  font-weight: 500;
+  font-family: var(--font-roboto);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.contactCard:hover .cardLink {
+  transform: translateX(5px);
+  color: #2828e9;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 60px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.copyright {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-roboto);
+  margin: 0;
+}
+
+@media screen and (max-width: 1200px) {
+  .contactGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+
+  .contactCard {
+    padding: 36px 28px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin-top: 60px;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .desc {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .contactCard {
+    padding: 32px 24px;
+  }
+
+  .cardIcon {
+    font-size: 40px;
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+
+  .cardSubtitle {
+    font-size: 14px;
+  }
+
+  .footer {
+    padding-top: 40px;
+    margin-top: 40px;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+}
+

@@ -1,4 +1,5 @@
 /* skills.module.css */
+@import "../../vars.css";
 
 .container {
   display: flex;
@@ -11,10 +12,11 @@
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 77px;
+  padding-bottom: 50px;
 
   opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .container.visible {
@@ -25,123 +27,245 @@
 .wrapper {
   position: relative;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   width: 100%;
   max-width: 1100px;
   gap: 12px;
 }
 
-@media (max-width: 960px) {
-  .wrapper {
-    flex-direction: column;
-  }
+.header {
+  margin-bottom: 40px;
 }
 
 .title {
+  color: var(--color-text);
   font-size: 35px;
   font-weight: 700;
-  color: var(--color-text);
+  letter-spacing: 1.75px;
+  text-transform: capitalize;
+  margin-bottom: 12px;
+  font-family: var(--font-roboto);
+  position: relative;
+  display: inline-block;
 }
 
-@media (max-width: 768px) {
-  .title {
-    margin-top: 12px;
-    font-size: 32px;
-  }
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #5dd6ac, #2828e9);
+  border-radius: 2px;
 }
 
-@media (max-width: 768px) {
-  .desc {
-    font-size: 16px;
-  }
+.subtitle {
+  font-size: 18px;
+  line-height: 1.8;
+  font-family: var(--font-roboto);
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 700px;
+  margin-top: 20px;
 }
 
 .skillsContainer {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
   margin-top: 30px;
-  gap: 30px;
-  justify-content: center;
 }
 
 .skill {
   width: 100%;
-  max-width: 500px;
-  background: #17172c;
-  border: 0.1px solid #2d223d;
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
-  border-radius: 16px;
-  padding: 18px 36px;
-  transition: all 0.5s ease-in-out;
+  background: rgba(23, 23, 44, 0.6);
+  border: 1px solid rgba(93, 214, 172, 0.15);
+  border-radius: 12px;
+  padding: 28px 24px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out, all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.skill.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.skill::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(93, 214, 172, 0.05), transparent);
+  transition: left 0.6s ease;
+}
+
+.skill:hover::before {
+  left: 100%;
 }
 
 .skill:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 50px 4px rgba(0, 0, 0, 0.6);
-  filter: brightness(1.1);
-}
-
-@media (max-width: 768px) {
-  .skill {
-    max-width: 400px;
-    padding: 10px 36px;
-  }
-}
-
-@media (max-width: 500px) {
-  .skill {
-    max-width: 330px;
-    padding: 10px 36px;
-  }
+  border-color: rgba(93, 214, 172, 0.3);
+  box-shadow: 0 12px 32px rgba(93, 214, 172, 0.15);
+  transform: translateY(-5px);
+  background: rgba(23, 23, 44, 0.8);
 }
 
 .skillTitle {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 600;
   margin-bottom: 20px;
   text-align: center;
+  color: var(--color-text);
+  font-family: var(--font-roboto);
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(93, 214, 172, 0.2);
 }
 
 .skillList {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 10px;
+  margin-bottom: 0;
 }
 
 .skillItem {
-  font-size: 16px;
-  font-weight: 400;
-  color: #F2F3F4;
-  border: 1px solid #9eb4ca;
-  border-radius: 12px;
-  border-width: 2px;
-  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(93, 214, 172, 0.15);
+  border-radius: 8px;
+  padding: 8px 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
+  background: rgba(93, 214, 172, 0.03);
+  cursor: default;
+  font-family: var(--font-roboto);
+  opacity: 0;
+  transform: scale(0.8) translateY(10px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out, all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.skill.visible .skillItem {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.skillItem::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(93, 214, 172, 0.1);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.skillItem:hover::before {
+  width: 100%;
+  height: 100%;
+}
+
+.skillItem:hover {
+  border-color: rgba(93, 214, 172, 0.4);
+  background: rgba(93, 214, 172, 0.12);
+  color: #5dd6ac;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 16px rgba(93, 214, 172, 0.2);
+}
+
+.skillImage {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.skillItem:hover .skillImage {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.skillName {
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
+  .container {
+    margin-top: 60px;
+  }
+
+  .title {
+    font-size: 32px;
+    margin-top: 12px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .skillsContainer {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .skill {
+    padding: 24px 20px;
+  }
+
+  .skillTitle {
+    font-size: 20px;
+    margin-bottom: 18px;
+  }
+
+  .skillList {
+    gap: 8px;
+  }
+
   .skillItem {
-    font-size: 14px;
-    padding: 8px 12px;
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+
+  .skillImage {
+    width: 16px;
+    height: 16px;
   }
 }
 
 @media (max-width: 500px) {
-  .skillItem {
-    font-size: 14px;
-    padding: 6px 12px;
+  .skill {
+    padding: 20px 16px;
   }
-}
 
-.skillImage {
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
+  .skillTitle {
+    font-size: 18px;
+  }
+
+  .skillItem {
+    font-size: 12px;
+    padding: 6px 9px;
+  }
+
+  .skillImage {
+    width: 14px;
+    height: 14px;
+  }
 }

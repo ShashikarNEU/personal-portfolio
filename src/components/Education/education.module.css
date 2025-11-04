@@ -5,6 +5,7 @@
   margin-left: 10%;
   margin-right: 10%;
   margin-top: 77px;
+  padding-bottom: 50px;
 
   opacity: 0;
   transform: translateY(50px);
@@ -20,58 +21,151 @@
   color: var(--color-text);
   font-size: 35px;
   font-weight: 700;
-  letter-spacing: 1.75;
+  letter-spacing: 1.75px;
   text-transform: capitalize;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #5dd6ac, #2828e9);
+  border-radius: 2px;
 }
 
 .content {
   margin-top: 14px;
+  position: relative;
 }
 
 .educationHistory {
   display: flex;
   flex-direction: column;
   gap: 40px;
+  position: relative;
+  padding-left: 50px;
+}
+
+.educationHistory::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(93, 214, 172, 0.3) 0%, rgba(40, 40, 233, 0.1) 100%);
+  border-radius: 4px;
 }
 
 .historyItem {
   display: flex;
   flex-direction: column;
-  background: #17172c;
-  border: 0.1px solid #2d223d;
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  background: rgba(23, 23, 44, 0.6);
+  border: 1px solid rgba(93, 214, 172, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
   border-radius: 16px;
-  padding: 18px 36px;
-  transition: all 0.5s ease-in-out;
+  padding: 24px;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.historyItem::before {
+  content: '';
+  position: absolute;
+  left: -54px;
+  top: 24px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #17172c;
+  border: 2px solid #5dd6ac;
+  box-shadow: 0 0 0 4px rgba(93, 214, 172, 0.1);
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.historyItem:hover::before {
+  transform: scale(1.2);
+  border-color: #2828e9;
+  box-shadow: 0 0 0 6px rgba(40, 40, 233, 0.1);
+}
+
+.historyItem::after {
+  content: '';
+  position: absolute;
+  left: -38px;
+  top: 32px;
+  width: 38px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(93, 214, 172, 0.3), rgba(40, 40, 233, 0.1));
 }
 
 .historyItem:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 0 50px 4px rgba(0, 0, 0, 0.6);
-  filter: brightness(1.1);
+  transform: translateY(-5px) translateX(5px);
+  border-color: rgba(93, 214, 172, 0.3);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  background: rgba(23, 23, 44, 0.8);
 }
 
 .historyItemDetails {
   font-family: var(--font-roboto);
   display: flex;
   flex-direction: row;
-  justify-content: start;
-  gap: 15px;
-}
-
-.educationHistoryTitle h3 {
-  font-size: 30px;
-  font-weight: 500;
-}
-
-.educationHistoryTitle p {
-  font-size: 20px;
-  font-weight: 300;
+  align-items: flex-start;
+  gap: 24px;
 }
 
 .logoStyle {
-  width: 95px;
-  height: 75px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
-  border-radius: 0%;
+  border-radius: 12px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.educationHistoryTitle {
+  flex: 1;
+}
+
+.educationHistoryTitle h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.educationHistoryTitle p {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 4px;
+}
+
+@media (max-width: 768px) {
+  .historyItemDetails {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .logoStyle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .educationHistoryTitle h3 {
+    font-size: 20px;
+  }
+
+  .educationHistoryTitle p {
+    font-size: 14px;
+  }
 }

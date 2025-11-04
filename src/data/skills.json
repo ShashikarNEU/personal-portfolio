@@ -116,6 +116,14 @@
       {
         "name": "HCP Packer",
         "image": "https://img.icons8.com/?size=100&id=tgdfBthuRgAk&format=png&color=000000"
+      },
+      {
+        "name": "Docker",
+        "image": "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg"
+      },
+      {
+        "name": "Kubernetes",
+        "image": "https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-plain-wordmark.svg"
       }
     ]
   },

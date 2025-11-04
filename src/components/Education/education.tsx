@@ -40,8 +40,15 @@ const Education: React.FC = () => {
             return (
               <li className={styles.historyItem} key={index}>
                 <div className={styles.historyItemDetails}>
+                  <img 
+                    className={styles.logoStyle} 
+                    src={require(`../../assets/education/${education.imageLogo}`)} 
+                    alt={`${education.school} logo`}
+                    loading="lazy"
+                  />
                   <div className={styles.educationHistoryTitle}>
-                    <h3>{`${education.degree}, ${education.school}`}</h3>
+                    <h3>{`${education.degree}`}</h3>
+                    <h3>{`${education.school}`}</h3>
                     <p>{`${education.startDate} - ${education.endDate}`}</p>
                     <p>{`Grade: ${education.gpa}`}</p>
                   </div>
