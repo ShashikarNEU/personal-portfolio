@@ -1,0 +1,246 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 85%;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.wrapperUser {
+  align-self: flex-end;
+  align-items: flex-end;
+}
+
+.wrapperBot {
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+/* Bot message row: avatar + bubble column */
+.messageRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 50%;
+  background: var(--gradient-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #fff;
+  margin-top: 2px;
+}
+
+.avatarError {
+  background: linear-gradient(135deg, #dc3545, #a71d2a);
+}
+
+.bubbleColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  flex: 1;
+}
+
+/* Bubble */
+.bubble {
+  padding: 10px 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.user {
+  background: var(--gradient-accent);
+  color: #fff;
+  border-radius: 16px 16px 4px 16px;
+}
+
+.bot {
+  background: var(--color-bg-card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--color-chat-panel-border);
+  color: var(--color-text-secondary);
+  border-radius: 16px 16px 16px 4px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+}
+
+.error {
+  background: var(--color-chat-error-bg);
+  border: 1px solid var(--color-chat-error-border);
+  color: var(--color-chat-error-text);
+  border-radius: 16px 16px 16px 4px;
+}
+
+.errorIcon {
+  margin-right: 6px;
+  font-size: 14px;
+}
+
+.text {
+  white-space: pre-wrap;
+}
+
+.bold {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.listItem {
+  display: flex;
+  gap: 6px;
+  padding: 2px 0;
+}
+
+.listBullet {
+  color: var(--color-accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.subListItem {
+  display: flex;
+  gap: 6px;
+  padding: 1px 0 1px 16px;
+}
+
+.link {
+  color: var(--color-accent-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link:hover {
+  opacity: 0.8;
+}
+
+/* Streaming cursor */
+.streamingCursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--color-accent);
+  margin-left: 1px;
+  vertical-align: text-bottom;
+  border-radius: 1px;
+  box-shadow: 0 0 6px rgba(93, 214, 172, 0.5);
+  animation: blink 0.8s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.textStreaming {
+  animation: streamPulse 2s ease-in-out infinite;
+}
+
+@keyframes streamPulse {
+  0%, 100% { text-shadow: none; }
+  50% { text-shadow: 0 0 8px rgba(93, 214, 172, 0.08); }
+}
+
+/* Action buttons */
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  margin-top: 4px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.wrapperBot:hover .actions,
+.actions:focus-within {
+  opacity: 1;
+}
+
+.actionBtn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: var(--color-text-faint);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.actionBtn:hover {
+  background: var(--color-bg-card);
+  color: var(--color-text);
+}
+
+.actionActive {
+  color: var(--color-accent);
+}
+
+.actionActive:hover {
+  color: var(--color-accent);
+}
+
+/* Action buttons (hover-reveal below bot messages) */
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 2px;
+  margin-top: 4px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.wrapperBot:hover .actions,
+.actions:focus-within {
+  opacity: 1;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text-faint);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.actionBtn:hover {
+  background: var(--color-bg-card);
+  color: var(--color-text);
+}
+
+.actionActive {
+  color: var(--color-accent);
+}
+
+.actionActive:hover {
+  color: var(--color-accent);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

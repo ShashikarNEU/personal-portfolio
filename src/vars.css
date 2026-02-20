@@ -1,11 +1,252 @@
-:root {
-  /* Colours */
-  --color-text: #fff;
-  --color-primary: #576cbc;
-  --color-secondary: #19376d;
-  --color-dark: #0b2447;
-  --color-bg: #04152d;
+/* ============================================
+   THEME VARIABLES — Dark (default) & Light
+   ============================================ */
 
+:root {
   /* Fonts */
   --font-roboto: "Roboto";
+
+  /* === Dark Theme (default) === */
+  --color-bg: #04152d;
+  --color-bg-secondary: #17172c;
+  --color-bg-card: rgba(23, 23, 44, 0.6);
+  --color-bg-card-hover: rgba(23, 23, 44, 0.8);
+  --color-bg-card-solid: #17172c;
+
+  --color-text: #fff;
+  --color-text-secondary: rgba(255, 255, 255, 0.85);
+  --color-text-muted: rgba(255, 255, 255, 0.7);
+  --color-text-faint: rgba(255, 255, 255, 0.6);
+  --color-text-footer: rgba(255, 255, 255, 0.5);
+
+  --color-accent: #5dd6ac;
+  --color-accent-secondary: #2828e9;
+  --color-accent-text: #5dd6ac;
+
+  --color-border: rgba(93, 214, 172, 0.1);
+  --color-border-hover: rgba(93, 214, 172, 0.3);
+  --color-border-strong: rgba(93, 214, 172, 0.4);
+  --color-border-subtle: rgba(45, 34, 61, 0.5);
+  --color-border-card: 0.1px solid #2d223d;
+
+  --color-shadow: rgba(0, 0, 0, 0.2);
+  --color-shadow-hover: rgba(0, 0, 0, 0.4);
+  --color-shadow-accent: rgba(93, 214, 172, 0.2);
+  --color-card-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+
+  --color-overlay: rgba(0, 0, 0, 0.7);
+  --color-overlay-image: rgba(0, 0, 0, 0.8);
+  --color-scrollbar-track: var(--color-bg);
+
+  --color-selection-bg: rgba(93, 214, 172, 0.3);
+  --color-selection-text: #fff;
+
+  --color-logo-bg: rgba(255, 255, 255, 0.05);
+  --color-logo-border: rgba(255, 255, 255, 0.1);
+
+  --color-timeline-dot-bg: #17172c;
+  --color-timeline-line: linear-gradient(180deg, rgba(93, 214, 172, 0.3) 0%, rgba(40, 40, 233, 0.1) 100%);
+  --color-timeline-arm: linear-gradient(90deg, rgba(93, 214, 172, 0.3), rgba(40, 40, 233, 0.1));
+
+  --gradient-accent: linear-gradient(90deg, #5dd6ac, #2828e9);
+  --gradient-accent-reverse: linear-gradient(180deg, #5dd6ac, #2828e9);
+  --gradient-accent-reverse-flip: linear-gradient(180deg, #2828e9, #5dd6ac);
+  --gradient-card-glow: linear-gradient(135deg, rgba(93, 214, 172, 0.15), rgba(40, 40, 233, 0.15));
+  --gradient-card-subtle: linear-gradient(135deg, rgba(93, 214, 172, 0.05), rgba(40, 40, 233, 0.05));
+  --gradient-card-bg: linear-gradient(to bottom, transparent, rgba(23, 23, 44, 0.3));
+  --gradient-name: linear-gradient(135deg, #fff 0%, #e0e0e0 50%, #5dd6ac 100%);
+  --gradient-position: linear-gradient(90deg, #5dd6ac, #2828e9);
+
+  --color-skill-item-bg: rgba(93, 214, 172, 0.03);
+  --color-skill-item-border: rgba(93, 214, 172, 0.15);
+  --color-skill-item-hover-bg: rgba(93, 214, 172, 0.12);
+  --color-skill-item-ripple: rgba(93, 214, 172, 0.1);
+  --color-skill-shimmer: rgba(93, 214, 172, 0.05);
+
+  --color-tag-bg: rgba(93, 214, 172, 0.12);
+  --color-tag-border: rgba(93, 214, 172, 0.25);
+  --color-tag-hover-bg: rgba(93, 214, 172, 0.25);
+  --color-tag-hover-border: rgba(93, 214, 172, 0.5);
+  --color-tag-more-bg: rgba(255, 255, 255, 0.05);
+  --color-tag-more-border: rgba(255, 255, 255, 0.1);
+
+  --color-btn-outline-border: #5dd6ac;
+  --color-focus-ring: #5dd6ac;
+
+  --color-modal-scroll-track: #000000a7;
+  --color-modal-scroll-thumb: #888;
+  --color-modal-scroll-thumb-hover: #555;
+  --color-modal-tag-text: #b7aace;
+  --color-modal-tag-border: #9eb4ca;
+  --color-modal-tag-bg: rgba(133, 76, 230, 0.15);
+  --color-modal-btn-bg: #854CE6;
+  --color-modal-btn-text: #C8CFD8;
+
+  --color-category-badge-bg: rgba(23, 23, 44, 0.95);
+  --color-category-badge-hover-bg: rgba(23, 23, 44, 0.98);
+
+  --color-action-btn-bg: rgba(93, 214, 172, 0.2);
+  --color-action-btn-hover-bg: rgba(93, 214, 172, 0.3);
+
+  --color-mobile-menu-bg: #17172c;
+  --color-mobile-menu-border: rgba(93, 214, 172, 0.2);
+  --color-mobile-menu-item-border: rgba(93, 214, 172, 0.1);
+  --color-mobile-menu-hover-bg: rgba(93, 214, 172, 0.08);
+  --color-mobile-menu-text: rgba(255, 255, 255, 0.85);
+
+  --color-icon-card-gradient: linear-gradient(135deg, rgba(93, 214, 172, 0.2), rgba(40, 40, 233, 0.2));
+  --color-icon-card-hover-gradient: linear-gradient(135deg, rgba(93, 214, 172, 0.3), rgba(40, 40, 233, 0.3));
+  --color-icon-card-border: rgba(93, 214, 172, 0.3);
+
+  /* Chatbot */
+  --color-chat-panel-bg: rgba(4, 21, 45, 0.97);
+  --color-chat-header-bg: rgba(23, 23, 44, 0.95);
+  --color-chat-input-bg: rgba(23, 23, 44, 0.8);
+  --color-chat-error-bg: rgba(220, 53, 69, 0.12);
+  --color-chat-error-border: rgba(220, 53, 69, 0.3);
+  --color-chat-error-text: #ff6b6b;
+  --color-chat-success-bg: rgba(93, 214, 172, 0.12);
+  --color-chat-success-border: rgba(93, 214, 172, 0.3);
+  --color-chat-source-bg: rgba(23, 23, 44, 0.7);
+  --color-chat-thinking-bg: rgba(23, 23, 44, 0.4);
+  --color-chat-panel-border: rgba(93, 214, 172, 0.15);
+  --color-chat-panel-shadow: rgba(0, 0, 0, 0.45);
+
+  /* Chatbot tool badges */
+  --color-badge-rag-bg: rgba(87, 108, 188, 0.25);
+  --color-badge-rag-text: rgba(135, 160, 255, 0.95);
+  --color-badge-github-bg: rgba(93, 214, 172, 0.15);
+  --color-badge-github-text: #5dd6ac;
+  --color-badge-code-bg: rgba(247, 37, 133, 0.15);
+  --color-badge-code-text: #f72585;
+  --color-badge-email-bg: rgba(93, 214, 172, 0.15);
+  --color-badge-email-text: #5dd6ac;
+
+  /* Gradient mesh background */
+  --gradient-mesh-1: rgba(87, 108, 188, 0.12);
+  --gradient-mesh-2: rgba(93, 214, 172, 0.08);
+  --gradient-mesh-3: rgba(40, 40, 233, 0.06);
+}
+
+/* === Light Theme === */
+[data-theme="light"] {
+  --color-bg: #f8f9fa;
+  --color-bg-secondary: #ffffff;
+  --color-bg-card: rgba(255, 255, 255, 0.8);
+  --color-bg-card-hover: rgba(255, 255, 255, 0.95);
+  --color-bg-card-solid: #ffffff;
+
+  --color-text: #1a1a2e;
+  --color-text-secondary: rgba(26, 26, 46, 0.85);
+  --color-text-muted: rgba(26, 26, 46, 0.65);
+  --color-text-faint: rgba(26, 26, 46, 0.55);
+  --color-text-footer: rgba(26, 26, 46, 0.5);
+
+  --color-accent: #2ea87a;
+  --color-accent-secondary: #4040d9;
+  --color-accent-text: #2ea87a;
+
+  --color-border: rgba(26, 26, 46, 0.1);
+  --color-border-hover: rgba(46, 168, 122, 0.35);
+  --color-border-strong: rgba(46, 168, 122, 0.45);
+  --color-border-subtle: rgba(26, 26, 46, 0.1);
+  --color-border-card: 1px solid rgba(26, 26, 46, 0.08);
+
+  --color-shadow: rgba(0, 0, 0, 0.06);
+  --color-shadow-hover: rgba(0, 0, 0, 0.12);
+  --color-shadow-accent: rgba(46, 168, 122, 0.15);
+  --color-card-shadow: rgba(0, 0, 0, 0.06) 0px 4px 24px;
+
+  --color-overlay: rgba(0, 0, 0, 0.5);
+  --color-overlay-image: rgba(0, 0, 0, 0.6);
+  --color-scrollbar-track: var(--color-bg);
+
+  --color-selection-bg: rgba(46, 168, 122, 0.25);
+  --color-selection-text: #1a1a2e;
+
+  --color-logo-bg: rgba(26, 26, 46, 0.04);
+  --color-logo-border: rgba(26, 26, 46, 0.1);
+
+  --color-timeline-dot-bg: #ffffff;
+  --color-timeline-line: linear-gradient(180deg, rgba(46, 168, 122, 0.3) 0%, rgba(64, 64, 217, 0.1) 100%);
+  --color-timeline-arm: linear-gradient(90deg, rgba(46, 168, 122, 0.3), rgba(64, 64, 217, 0.1));
+
+  --gradient-accent: linear-gradient(90deg, #2ea87a, #4040d9);
+  --gradient-accent-reverse: linear-gradient(180deg, #2ea87a, #4040d9);
+  --gradient-accent-reverse-flip: linear-gradient(180deg, #4040d9, #2ea87a);
+  --gradient-card-glow: linear-gradient(135deg, rgba(46, 168, 122, 0.1), rgba(64, 64, 217, 0.1));
+  --gradient-card-subtle: linear-gradient(135deg, rgba(46, 168, 122, 0.04), rgba(64, 64, 217, 0.04));
+  --gradient-card-bg: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.2));
+  --gradient-name: linear-gradient(135deg, #1a1a2e 0%, #2d2d50 50%, #2ea87a 100%);
+  --gradient-position: linear-gradient(90deg, #2ea87a, #4040d9);
+
+  --color-skill-item-bg: rgba(46, 168, 122, 0.05);
+  --color-skill-item-border: rgba(46, 168, 122, 0.18);
+  --color-skill-item-hover-bg: rgba(46, 168, 122, 0.12);
+  --color-skill-item-ripple: rgba(46, 168, 122, 0.08);
+  --color-skill-shimmer: rgba(46, 168, 122, 0.04);
+
+  --color-tag-bg: rgba(46, 168, 122, 0.08);
+  --color-tag-border: rgba(46, 168, 122, 0.2);
+  --color-tag-hover-bg: rgba(46, 168, 122, 0.18);
+  --color-tag-hover-border: rgba(46, 168, 122, 0.4);
+  --color-tag-more-bg: rgba(26, 26, 46, 0.04);
+  --color-tag-more-border: rgba(26, 26, 46, 0.1);
+
+  --color-btn-outline-border: #2ea87a;
+  --color-focus-ring: #2ea87a;
+
+  --color-modal-scroll-track: rgba(0, 0, 0, 0.3);
+  --color-modal-scroll-thumb: #ccc;
+  --color-modal-scroll-thumb-hover: #aaa;
+  --color-modal-tag-text: #4040d9;
+  --color-modal-tag-border: rgba(64, 64, 217, 0.3);
+  --color-modal-tag-bg: rgba(64, 64, 217, 0.08);
+  --color-modal-btn-bg: #4040d9;
+  --color-modal-btn-text: #ffffff;
+
+  --color-category-badge-bg: rgba(255, 255, 255, 0.95);
+  --color-category-badge-hover-bg: rgba(255, 255, 255, 0.98);
+
+  --color-action-btn-bg: rgba(46, 168, 122, 0.15);
+  --color-action-btn-hover-bg: rgba(46, 168, 122, 0.25);
+
+  --color-mobile-menu-bg: #ffffff;
+  --color-mobile-menu-border: rgba(46, 168, 122, 0.2);
+  --color-mobile-menu-item-border: rgba(26, 26, 46, 0.08);
+  --color-mobile-menu-hover-bg: rgba(46, 168, 122, 0.06);
+  --color-mobile-menu-text: rgba(26, 26, 46, 0.85);
+
+  --color-icon-card-gradient: linear-gradient(135deg, rgba(46, 168, 122, 0.15), rgba(64, 64, 217, 0.15));
+  --color-icon-card-hover-gradient: linear-gradient(135deg, rgba(46, 168, 122, 0.25), rgba(64, 64, 217, 0.25));
+  --color-icon-card-border: rgba(46, 168, 122, 0.25);
+
+  /* Chatbot */
+  --color-chat-panel-bg: rgba(255, 255, 255, 0.97);
+  --color-chat-header-bg: rgba(248, 249, 250, 0.95);
+  --color-chat-input-bg: rgba(248, 249, 250, 0.8);
+  --color-chat-error-bg: rgba(220, 53, 69, 0.08);
+  --color-chat-error-border: rgba(220, 53, 69, 0.25);
+  --color-chat-error-text: #dc3545;
+  --color-chat-success-bg: rgba(46, 168, 122, 0.1);
+  --color-chat-success-border: rgba(46, 168, 122, 0.25);
+  --color-chat-source-bg: rgba(248, 249, 250, 0.8);
+  --color-chat-thinking-bg: rgba(248, 249, 250, 0.6);
+  --color-chat-panel-border: rgba(26, 26, 46, 0.1);
+  --color-chat-panel-shadow: rgba(0, 0, 0, 0.15);
+
+  /* Chatbot tool badges */
+  --color-badge-rag-bg: rgba(87, 108, 188, 0.12);
+  --color-badge-rag-text: rgba(67, 88, 160, 0.95);
+  --color-badge-github-bg: rgba(46, 168, 122, 0.12);
+  --color-badge-github-text: #2ea87a;
+  --color-badge-code-bg: rgba(200, 30, 110, 0.1);
+  --color-badge-code-text: #c81e6e;
+  --color-badge-email-bg: rgba(46, 168, 122, 0.12);
+  --color-badge-email-text: #2ea87a;
+
+  /* Gradient mesh background */
+  --gradient-mesh-1: rgba(46, 168, 122, 0.06);
+  --gradient-mesh-2: rgba(64, 64, 217, 0.04);
+  --gradient-mesh-3: rgba(46, 168, 122, 0.03);
 }

@@ -8,6 +8,8 @@ import Contact from './components/Contact/contact';
 import Navbar from './components/Navbar/navbar';
 import styles from './App.module.css';
 import ProjectDetails from './components/Projects/projectDetails';
+import ChatWidget from './components/chatbot/ChatWidget';
+import AIShowcase from './components/AIShowcase/aiShowcase';
 
 function App() {
   const [openModal, setOpenModal] = useState({ state: false, project: null });
@@ -18,9 +20,11 @@ function App() {
       <div id="experience"><Experience /></div>
       <div id="education"><Education /></div>
       <div id="skills"><Skills /></div>
+      <div id="ai-showcase"><AIShowcase /></div>
       <div id="projects"><Projects openModal={openModal} setOpenModal={setOpenModal} /></div>
       <div id="contact"><Contact /></div>
       {openModal.state && <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />}
+      <ChatWidget />
     </div>
   );
 }

@@ -1,0 +1,157 @@
+/* ======= Floating Action Button ======= */
+.fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: var(--gradient-accent);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px var(--color-chat-panel-shadow);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.fab:hover {
+  transform: scale(1.08);
+}
+
+.fabHidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+}
+
+.fabPulse {
+  animation: fabPulse 2s ease-in-out infinite;
+}
+
+@keyframes fabPulse {
+  0%,
+  100% {
+    box-shadow: 0 4px 20px var(--color-chat-panel-shadow);
+  }
+  50% {
+    box-shadow: 0 4px 20px var(--color-chat-panel-shadow),
+      0 0 0 10px rgba(93, 214, 172, 0.15);
+  }
+}
+
+/* ======= Chat Panel ======= */
+.panel {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 10000;
+  width: 380px;  /* default, overridden by inline style */
+  height: 520px; /* default, overridden by inline style */
+  border-radius: 16px;
+  background: var(--color-chat-panel-bg);
+  border: 1px solid var(--color-chat-panel-border);
+  box-shadow: 0 8px 40px var(--color-chat-panel-shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: panelOpen 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes panelOpen {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ======= Resize Handle (top-left corner) ======= */
+.resizeHandle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  cursor: nwse-resize;
+  z-index: 10;
+  border-top-left-radius: 16px;
+}
+
+.resizeHandle::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid rgba(87, 108, 188, 0.4);
+  border-left: 2px solid rgba(87, 108, 188, 0.4);
+  transition: border-color 0.2s;
+}
+
+.resizeHandle:hover::after {
+  border-color: rgba(93, 214, 172, 0.7);
+}
+
+/* ======= Header ======= */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--color-chat-header-bg);
+  border-bottom: 1px solid var(--color-chat-panel-border);
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.headerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.headerBtn:hover {
+  background: var(--color-bg-card);
+  color: var(--color-text);
+}
+
+/* ======= Mobile ======= */
+@media (max-width: 640px) {
+  .panel {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    bottom: 0;
+    right: 0;
+  }
+}

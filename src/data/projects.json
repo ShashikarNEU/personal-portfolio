@@ -3,10 +3,8 @@
     "id": 1,
     "title": "Geo-Aware Community Marketplace",
     "date": "Nov 2024 - Dec 2024",
-    "description":
-      "locAll is a community-centric platform designed to connect individuals with local events, marketplace activities, and support initiatives. It offers location-based features like event management, a dynamic marketplace, real-time weather updates, events and a curated feed of local happenings. Additionally, locAll promotes sustainability and community care through food-sharing and donation opportunities, fostering a sense of togetherness within neighborhoods.",
-    "image":
-      "LocAll.png",
+    "description": "locAll is a community-centric platform designed to connect individuals with local events, marketplace activities, and support initiatives. It offers location-based features like event management, a dynamic marketplace, real-time weather updates, events and a curated feed of local happenings. Additionally, locAll promotes sustainability and community care through food-sharing and donation opportunities, fostering a sense of togetherness within neighborhoods.",
+    "image": "LocAll.png",
     "tags": [
       "React Js",
       "Redux",
@@ -24,12 +22,29 @@
   },
   {
     "id": 2,
+    "title": "Personal AI Sidekick",
+    "date": "Feb 2025",
+    "description": "An AI-powered personal assistant built with LangChain and LangGraph that acts as an intelligent sidekick for everyday tasks. Features multi-agent architecture with specialized tools for web search, content summarization, and task planning. Implements a sophisticated agentic workflow with memory, context-aware responses, and tool-calling capabilities for an interactive conversational experience.",
+    "image": "SidekickAI.png",
+    "tags": [
+      "Python",
+      "LangChain",
+      "LangGraph",
+      "OpenAI API",
+      "Agentic AI",
+      "Multi-Agent",
+      "Gradio"
+    ],
+    "category": "AI / ML",
+    "github": "https://github.com/ShashikarNEU/sidekick_project",
+    "webapp": "https://github.com/ShashikarNEU/sidekick_project"
+  },
+  {
+    "id": 3,
     "title": "Cloud Web Application",
     "date": "Jan 2024 - April 2024",
-    "description":
-      "Developed cloud-native web applications using SpringBoot and Hibernate, with Terraform for Infrastructure as Code (IaC) on Google Cloud Platform (GCP). Built and managed resources like VMs, Cloud SQL, and VPCs. Implemented CI pipelines using GitHub Actions for testing and provisioning, and orchestrated a serverless architecture with Google Cloud Functions and Pub/Sub for real-time event-driven notifications. Configured DNS, load balancing, and autoscaling to ensure scalable, robust solutions.",
-    "image":
-      "CloudNativeApplication.png",
+    "description": "Developed cloud-native web applications using SpringBoot and Hibernate, with Terraform for Infrastructure as Code (IaC) on Google Cloud Platform (GCP). Built and managed resources like VMs, Cloud SQL, and VPCs. Implemented CI pipelines using GitHub Actions for testing and provisioning, and orchestrated a serverless architecture with Google Cloud Functions and Pub/Sub for real-time event-driven notifications. Configured DNS, load balancing, and autoscaling to ensure scalable, robust solutions.",
+    "image": "CloudNativeApplication.png",
     "tags": [
       "GCP",
       "Pub/Sub",
@@ -42,18 +57,16 @@
       "SpringBoot",
       "Hibernate"
     ],
-    "category": " cloud web app",
+    "category": "cloud",
     "github": "https://github.com/ShashikarA-CSYE6225",
     "webapp": "https://github.com/ShashikarA-CSYE6225"
   },
   {
-    "id": 3,
+    "id": 4,
     "title": "Hospital Management System",
     "date": "Jan 2024 - Apr 2024",
-    "description":
-      "The Hospital Management System (HMS) streamlines hospital operations by managing appointments, patient records, blood donations, and staff details. It features multiple modules for patient, donor, and staff management, with CRUD functionality for all entities. Using PL/SQL scripts, HMS creates and populates tables, sequences, and views for easy data retrieval and analysis. Views include doctor, patient, appointment, and blood inventory information, enabling efficient management of hospital resources and services.",
-    "image":
-      "DmddProject.png",
+    "description": "The Hospital Management System (HMS) streamlines hospital operations by managing appointments, patient records, blood donations, and staff details. It features multiple modules for patient, donor, and staff management, with CRUD functionality for all entities. Using PL/SQL scripts, HMS creates and populates tables, sequences, and views for easy data retrieval and analysis. Views include doctor, patient, appointment, and blood inventory information, enabling efficient management of hospital resources and services.",
+    "image": "DmddProject.png",
     "tags": [
       "Database Management",
       "PL/SQL Programming",
@@ -61,18 +74,16 @@
       "Database Security",
       "Data Relationships"
     ],
-    "category": "web app",
+    "category": "database",
     "github": "https://github.com/thejusthom/dmdd-group10",
     "webapp": "https://github.com/thejusthom/dmdd-group10"
   },
   {
-    "id": 4,
+    "id": 5,
     "title": "Amazon Prototype",
     "date": "Jun 2023 - Jul 2023",
-    "description":
-      "Developed an Amazon Front-End Replica that includes key features like a product page, billing page with dynamic delivery options, and an order-tracking page. Users can manage their Wishlist, add or delete items from the cart, and calculate the total bill based on selected delivery options. Built using JavaScript, HTML, and CSS, the project replicates core functionalities of the Amazon website for a seamless shopping experience.",
-    "image":
-      "AmazonClone.png",
+    "description": "Developed an Amazon Front-End Replica that includes key features like a product page, billing page with dynamic delivery options, and an order-tracking page. Users can manage their Wishlist, add or delete items from the cart, and calculate the total bill based on selected delivery options. Built using JavaScript, HTML, and CSS, the project replicates core functionalities of the Amazon website for a seamless shopping experience.",
+    "image": "AmazonClone.png",
     "tags": [
       "HTML",
       "CSS",
@@ -86,13 +97,11 @@
     "webapp": "https://github.com/ShashikarNEU/javascript-amazon-project"
   },
   {
-    "id": 5,
+    "id": 6,
     "title": "Student Management System",
     "date": "Jun 2023 - Jul 2023",
-    "description":
-      "Developed a Student Management System using Spring MVC, MySQL, and Thymeleaf for dynamic views. The system allows performing CRUD operations (Create, Read, Update, Delete) for student entities with MySQL database integration. It features a user-friendly interface with a navigation bar for seamless navigation across the app. The project is built using Maven and can be accessed locally after configuration.",
-    "image":
-      "Sms.png",
+    "description": "Developed a Student Management System using Spring MVC, MySQL, and Thymeleaf for dynamic views. The system allows performing CRUD operations (Create, Read, Update, Delete) for student entities with MySQL database integration. It features a user-friendly interface with a navigation bar for seamless navigation across the app. The project is built using Maven and can be accessed locally after configuration.",
+    "image": "Sms.png",
     "tags": [
       "SpringBoot",
       "Hibernate",
@@ -106,24 +115,5 @@
     "category": "web app",
     "github": "https://github.com/ShashikarNEU/student-management-system",
     "webapp": "https://github.com/ShashikarNEU/student-management-system"
-  },
-  {
-    "id": 6,
-    "title": "2-3 B-Tree Implementation",
-    "date": "Jan 2021 - Apr 2021",
-    "description":
-      "This project implements a 2-3 B-tree data structure in C++, where nodes hold up to 2 keys and have pointers to 3 child nodes. The tree is dynamically managed, with functions for inserting elements, handling overflow, sorting, and maintaining balanced nodes. A level-order traversal is used to print the tree structure. This project simulates how B-trees manage large datasets efficiently, making it a valuable concept in databases and file systems.",
-    "image":
-      "B-tree.jpg",
-    "tags": [
-      "C++ Programming",
-      "Data Structures",
-      "Algorithms",
-      "Recursion",
-      "Debugging"
-    ],
-    "category": "web app",
-    "github": "https://github.com/Shashikar5/MS-CS-Projects/tree/main/C%2B%2B%20Project-B%20tree",
-    "webapp": "https://github.com/Shashikar5/MS-CS-Projects/tree/main/C%2B%2B%20Project-B%20tree"
   }
 ]

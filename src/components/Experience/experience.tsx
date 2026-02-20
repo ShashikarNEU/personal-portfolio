@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './experience.module.css';
 import ExperienceData from '../../data/experience.json';
 
@@ -16,14 +16,14 @@ const Experience: React.FC = () => {
         }
       },
       {
-        threshold: 0.05, // Trigger when 10% of the section is in view
+        threshold: 0.05,
       }
     );
-  
+
     if (currentSection) {
       observer.observe(currentSection);
     }
-  
+
     return () => {
       if (currentSection) {
         observer.unobserve(currentSection);
@@ -37,32 +37,43 @@ const Experience: React.FC = () => {
       <div className={styles.content}>
         <ul className={styles.history}>
           {ExperienceData.map((experience, index) => {
-              const logoStyle =
-              experience.organisation === 'Ford Motor Company Private Ltd'
-                ? styles.fordLogo
-                : experience.organisation === 'Qubicle'
-                ? styles.dohaBankLogo
-                : styles.logoStyle;
-              return (
-                <li className={styles.historyItem} key={index}>
-                  <div className={styles.historyItemDetails}>
-                    <img className={logoStyle} src={require(`../../assets/experience/${experience.imageLogo}`)} alt={`${experience.organisation} logo`} loading="lazy" />
-                    <div className={styles.historyTitle}>
-                      <h3>{`${experience.role}, ${experience.organisation}`}</h3>
-                      <p>{`${experience.startDate} - ${experience.endDate}`}</p>
+            return (
+              <li
+                className={`${styles.historyItem} ${isVisible ? styles.itemVisible : ''}`}
+                style={{ animationDelay: `${index * 0.15}s` }}
+                key={index}
+              >
+                <div className={styles.historyItemDetails}>
+                  <img
+                    className={styles.logoStyle}
+                    src={require(`../../assets/experience/${experience.imageLogo}`)}
+                    alt={`${experience.organisation} logo`}
+                    loading="lazy"
+                  />
+                  <div className={styles.historyTitle}>
+                    <h3>{experience.role}</h3>
+                    <p className={styles.organisation}>{experience.organisation}</p>
+                    <div className={styles.metaRow}>
+                      <span className={styles.dateBadge}>
+                        📅 {experience.startDate} — {experience.endDate}
+                      </span>
+                      <span className={styles.locationBadge}>
+                        📍 {experience.location}
+                      </span>
                     </div>
                   </div>
-                  <div className={styles.historyItemDesc}>
-                    <ul>
-                      {experience.experiences.map((description, index) => {
-                        return (
-                          <li key={index}>{description}</li>
-                        )
-                      })}
-                    </ul>
-                  </div>
-                </li>
-              )
+                </div>
+                <div className={styles.historyItemDesc}>
+                  <ul>
+                    {experience.experiences.map((description, idx) => {
+                      return (
+                        <li key={idx}>{description}</li>
+                      )
+                    })}
+                  </ul>
+                </div>
+              </li>
+            )
           })}
         </ul>
       </div>

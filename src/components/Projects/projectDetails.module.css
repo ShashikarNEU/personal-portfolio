@@ -8,7 +8,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #000000a7;
+  background-color: var(--color-overlay);
   display: flex;
   align-items: top;
   justify-content: center;
@@ -22,17 +22,17 @@
 }
 
 .container::-webkit-scrollbar-track {
-  background: #000000a7;
+  background: var(--color-modal-scroll-track);
   border-radius: 10px;
 }
 
 .container::-webkit-scrollbar-thumb {
-  background-color: #888;
+  background-color: var(--color-modal-scroll-thumb);
   border-radius: 10px;
 }
 
 .container::-webkit-scrollbar-thumb:hover {
-  background-color: #555;
+  background-color: var(--color-modal-scroll-thumb-hover);
 }
 
 .wrapper {
@@ -45,9 +45,9 @@
   flex-direction: column;
   position: relative;
 
-  background: #17172c;
-  border: 0.1px solid #2d223d;
-  box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  background: var(--color-bg-card-solid);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--color-card-shadow);
   border-radius: 16px;
 }
 
@@ -55,13 +55,14 @@
   font-size: 35px;
   font-weight: 600;
   margin: 8px 6px 0px 6px;
+  color: var(--color-text);
 }
 
 .date {
   font-size: 16px;
   margin: 2px 6px;
   font-weight: 400;
-  color: var(--text-secondary);
+  color: var(--color-text-muted);
 }
 
 .desc {
@@ -69,7 +70,7 @@
   font-weight: 400;
   margin: 8px 6px;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-secondary);
 }
 
 .image {
@@ -77,13 +78,14 @@
   object-fit: cover;
   border-radius: 12px;
   margin-top: 30px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 10px 0px var(--color-shadow);
 }
 
 .label {
   font-size: 24px;
   font-weight: 600;
   margin: 8px 6px;
+  color: var(--color-text);
 }
 
 .tags {
@@ -98,13 +100,11 @@
 .tag {
   font-size: 14px;
   font-weight: 400;
-  color: #b7aace;
-  background-color: rgba(#854CE6, 0.15);
+  color: var(--color-modal-tag-text);
+  background-color: var(--color-modal-tag-bg);
   padding: 2px 8px;
-  border: 1px solid #9eb4ca;
+  border: 1px solid var(--color-modal-tag-border);
   border-radius: 10px;
-  border-color: #e7edf3;
-  border-width: 1px;
 }
 
 .button-group {
@@ -119,13 +119,19 @@
   text-align: center;
   font-size: 16px;
   font-weight: 600;
-  color: #C8CFD8;
+  color: var(--color-modal-btn-text);
   padding: 12px 16px;
   border-radius: 8px;
-  background-color: #854CE6;
+  background-color: var(--color-modal-btn-bg);
   cursor: pointer;
   text-decoration: none;
   transition: all 0.5s ease;
+}
+
+.button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--color-shadow-accent);
 }
 
 @media screen and (max-width: 768px) {

@@ -21,9 +21,10 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ openModal, setOpenModal
               top: '10px',
               right: '20px',
               cursor: 'pointer',
+              color: 'var(--color-text)',
             }}
             onClick={() => setOpenModal({ state: false, project: null })}
-          />   
+          />
           <img className={styles.image} src={require(`../../assets/projects/${project.image}`)} alt="project details" />
           <h2 className={styles.title}>{project.title}</h2>
           <div className={styles.date}>{project.date}</div>
@@ -34,9 +35,14 @@ const ProjectDetails: React.FC<ProjectDetailsProps> = ({ openModal, setOpenModal
           </div>
           <div className={styles.desc}>{project.description}</div>
           <div className={styles['button-group']}>
-            <a className={`${styles.button} ${styles['button-dull']}`} href={project.github} target="new">
+            <a className={`${styles.button} ${styles['button-dull']}`} href={project.github} target="_blank" rel="noopener noreferrer">
               View Code
             </a>
+            {project.webapp && project.webapp !== project.github && (
+              <a className={styles.button} href={project.webapp} target="_blank" rel="noopener noreferrer">
+                Live Demo
+              </a>
+            )}
           </div>
         </div>
       </div>

@@ -35,7 +35,7 @@
   left: 0;
   width: 60px;
   height: 4px;
-  background: linear-gradient(90deg, #5dd6ac, #2828e9);
+  background: var(--gradient-accent);
   border-radius: 2px;
 }
 
@@ -59,32 +59,49 @@
   top: 0;
   width: 3px;
   height: 100%;
-  background: linear-gradient(180deg, rgba(93, 214, 172, 0.3) 0%, rgba(40, 40, 233, 0.1) 100%);
+  background: var(--color-timeline-line);
   border-radius: 4px;
 }
 
 .historyItem {
   display: flex;
   flex-direction: column;
-  background: rgba(23, 23, 44, 0.6);
-  border: 1px solid rgba(93, 214, 172, 0.1);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 24px var(--color-shadow);
   border-radius: 16px;
-  padding: 24px;
+  padding: 28px;
   transition: all 0.3s ease-in-out;
   position: relative;
+  opacity: 0;
+  transform: translateX(-30px) scale(0.97);
+}
+
+.historyItem.itemVisible {
+  animation: slideReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-30px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
 }
 
 .historyItem::before {
   content: '';
   position: absolute;
   left: -54px;
-  top: 24px;
+  top: 28px;
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #17172c;
-  border: 2px solid #5dd6ac;
+  background: var(--color-timeline-dot-bg);
+  border: 2px solid var(--color-accent);
   box-shadow: 0 0 0 4px rgba(93, 214, 172, 0.1);
   z-index: 1;
   transition: all 0.3s ease-in-out;
@@ -92,7 +109,7 @@
 
 .historyItem:hover::before {
   transform: scale(1.2);
-  border-color: #2828e9;
+  border-color: var(--color-accent-secondary);
   box-shadow: 0 0 0 6px rgba(40, 40, 233, 0.1);
 }
 
@@ -100,17 +117,17 @@
   content: '';
   position: absolute;
   left: -38px;
-  top: 32px;
+  top: 36px;
   width: 38px;
   height: 2px;
-  background: linear-gradient(90deg, rgba(93, 214, 172, 0.3), rgba(40, 40, 233, 0.1));
+  background: var(--color-timeline-arm);
 }
 
 .historyItem:hover {
   transform: translateY(-5px) translateX(5px);
-  border-color: rgba(93, 214, 172, 0.3);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-  background: rgba(23, 23, 44, 0.8);
+  border-color: var(--color-border-hover);
+  box-shadow: 0 8px 30px var(--color-shadow-hover);
+  background: var(--color-bg-card-hover);
 }
 
 .historyItemDetails {
@@ -118,36 +135,100 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  gap: 24px;
+  gap: 20px;
 }
 
 .logoStyle {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--color-logo-bg);
+  border: 1px solid var(--color-logo-border);
+  flex-shrink: 0;
 }
 
 .educationHistoryTitle {
   flex: 1;
 }
 
-.educationHistoryTitle h3 {
-  font-size: 24px;
+.degree {
+  font-size: 22px;
   font-weight: 600;
-  margin-bottom: 8px;
-  color: #fff;
-  line-height: 1.4;
+  margin-bottom: 4px;
+  color: var(--color-text);
+  line-height: 1.3;
 }
 
-.educationHistoryTitle p {
-  font-size: 16px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 4px;
+.school {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--color-accent-text);
+  margin-bottom: 10px;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.dateBadge,
+.locationBadge,
+.gpaBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-faint);
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--color-skill-item-bg);
+  border: 1px solid var(--color-border);
+}
+
+.coursework {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.courseworkLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.courseworkTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.courseworkTag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: var(--color-tag-bg);
+  padding: 5px 12px;
+  border: 1px solid var(--color-tag-border);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.courseworkTag:hover {
+  background: var(--color-tag-hover-bg);
+  border-color: var(--color-tag-hover-border);
+  transform: translateY(-2px);
+  color: var(--color-accent-text);
 }
 
 @media (max-width: 768px) {
@@ -157,15 +238,35 @@
   }
 
   .logoStyle {
-    width: 60px;
-    height: 60px;
+    width: 56px;
+    height: 56px;
   }
 
-  .educationHistoryTitle h3 {
-    font-size: 20px;
+  .degree {
+    font-size: 19px;
   }
 
-  .educationHistoryTitle p {
-    font-size: 14px;
+  .school {
+    font-size: 15px;
+  }
+
+  .metaRow {
+    gap: 8px;
+  }
+
+  .dateBadge,
+  .locationBadge,
+  .gpaBadge {
+    font-size: 12px;
+    padding: 3px 8px;
+  }
+
+  .courseworkTag {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+
+  .historyItem {
+    padding: 20px;
   }
 }

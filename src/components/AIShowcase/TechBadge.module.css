@@ -1,0 +1,22 @@
+@import "../../vars.css";
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--font-roboto);
+  color: var(--color-accent-text);
+  background: var(--color-tag-bg);
+  border: 1px solid var(--color-tag-border);
+  border-radius: 20px;
+  transition: all 0.25s ease;
+  cursor: default;
+  white-space: nowrap;
+}
+
+.badge:hover {
+  background: var(--color-tag-hover-bg);
+  border-color: var(--color-tag-hover-border);
+}

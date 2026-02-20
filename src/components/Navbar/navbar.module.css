@@ -3,9 +3,9 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding-top: 61px;
   z-index: 2;
-  align-items: center;
   margin: 0 10%;
   position: relative;
 }
@@ -16,14 +16,17 @@
   text-decoration: none;
   color: var(--color-text);
   transition: color 0.3s ease;
+  flex-shrink: 0;
 }
 
 .title:hover {
-  color: #5dd6ac;
+  color: var(--color-accent-text);
 }
 
 .menu {
   display: flex;
+  align-items: center;
+  gap: 0;
 }
 
 .menuItems {
@@ -50,7 +53,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #5dd6ac, #2828e9);
+  background: var(--gradient-accent);
   transition: width 0.3s ease;
 }
 
@@ -61,7 +64,50 @@
 
 .menuItems a:hover,
 .menuItems a.active {
-  color: #5dd6ac;
+  color: var(--color-accent-text);
+}
+
+/* Compact theme toggle — blends into the nav */
+.themeToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+  margin-left: 20px;
+  padding: 0;
+}
+
+.themeToggle:hover {
+  color: var(--color-accent-text);
+  background: var(--color-skill-item-bg);
+}
+
+.themeIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.themeIcon.rotated {
+  transform: rotate(360deg);
+}
+
+/* Mobile theme toggle (inside bottom sheet menu) */
+.mobileThemeToggle {
+  display: none;
+}
+
+.mobileThemeBtn {
+  display: none;
 }
 
 .menuBtn {
@@ -100,7 +146,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--color-overlay);
   backdrop-filter: blur(4px);
   z-index: 98;
   animation: fadeIn 0.3s ease;
@@ -110,6 +156,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -136,6 +183,33 @@
     cursor: pointer;
   }
 
+  .themeToggle {
+    margin-left: 8px;
+  }
+
+  .mobileThemeToggle {
+    display: block;
+  }
+
+  .mobileThemeBtn {
+    display: block;
+    width: 100%;
+    padding: 20px 24px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-accent-text);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-family: inherit;
+  }
+
+  .mobileThemeBtn:hover {
+    background: var(--color-mobile-menu-hover-bg);
+  }
+
   .menuItems {
     position: fixed;
     bottom: -100%;
@@ -143,10 +217,10 @@
     transform: translateX(-50%);
     width: calc(100% - 40px);
     max-width: 500px;
-    background: #17172c;
-    border: 1px solid rgba(93, 214, 172, 0.2);
+    background: var(--color-mobile-menu-bg);
+    border: 1px solid var(--color-mobile-menu-border);
     border-radius: 24px 24px 0 0;
-    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 -8px 32px var(--color-shadow-hover);
     flex-direction: column;
     gap: 0;
     align-items: stretch;
@@ -165,7 +239,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #5dd6ac, #2828e9);
+    background: var(--gradient-accent);
     border-radius: 24px 24px 0 0;
   }
 
@@ -175,7 +249,7 @@
 
   .menuItems li {
     width: 100%;
-    border-bottom: 1px solid rgba(93, 214, 172, 0.1);
+    border-bottom: 1px solid var(--color-mobile-menu-item-border);
     position: relative;
     overflow: hidden;
   }
@@ -191,7 +265,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(93, 214, 172, 0.05), transparent);
+    background: linear-gradient(90deg, transparent, var(--color-skill-shimmer), transparent);
     transition: left 0.5s ease;
   }
 
@@ -205,7 +279,7 @@
     padding: 20px 24px;
     font-size: 18px;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--color-mobile-menu-text);
     transition: all 0.3s ease;
     position: relative;
     z-index: 1;
@@ -224,7 +298,7 @@
     transform: translateY(-50%) scaleX(0);
     width: 3px;
     height: 60%;
-    background: linear-gradient(180deg, #5dd6ac, #2828e9);
+    background: var(--gradient-accent-reverse);
     transition: transform 0.3s ease;
     border-radius: 0 2px 2px 0;
   }
@@ -236,8 +310,8 @@
 
   .menuItems a:hover,
   .menuItems a.active {
-    color: #5dd6ac;
-    background: rgba(93, 214, 172, 0.08);
+    color: var(--color-accent-text);
+    background: var(--color-mobile-menu-hover-bg);
     padding-left: 28px;
   }
 

@@ -1,0 +1,360 @@
+@import "../../vars.css";
+
+/* ===== Section Container ===== */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  color: var(--color-text);
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 77px;
+  padding-bottom: 50px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ===== Header ===== */
+.header {
+  margin-bottom: 40px;
+}
+
+.title {
+  color: var(--color-text);
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 1.75px;
+  text-transform: capitalize;
+  margin-bottom: 12px;
+  font-family: var(--font-roboto);
+  position: relative;
+  display: inline-block;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-accent);
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: 17px;
+  line-height: 1.8;
+  font-family: var(--font-roboto);
+  color: var(--color-text-muted);
+  max-width: 700px;
+  margin-top: 20px;
+}
+
+/* ===== Try Button ===== */
+.tryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-roboto);
+  color: #fff;
+  background: var(--gradient-accent);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px var(--color-shadow-accent);
+}
+
+.tryButton:active {
+  transform: translateY(0);
+}
+
+/* ===== Architecture Diagram ===== */
+.diagram {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 28px;
+  margin-bottom: 40px;
+}
+
+.diagramTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  font-family: var(--font-roboto);
+  margin-bottom: 24px;
+}
+
+.diagramFlow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.diagramNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 20px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  min-width: 100px;
+}
+
+.diagramNode:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--color-shadow-accent);
+}
+
+.diagramIcon {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.diagramLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  font-family: var(--font-roboto);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.diagramArrow {
+  display: flex;
+  align-items: center;
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.arrowIcon {
+  opacity: 0.6;
+}
+
+.diagramBranch {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.diagramToolNode {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--color-skill-item-bg);
+  border: 1px solid var(--color-skill-item-border);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.diagramToolNode:hover {
+  border-color: var(--color-border-hover);
+  transform: translateX(4px);
+}
+
+.diagramToolNode .diagramIcon {
+  font-size: 18px;
+}
+
+.diagramToolNode .diagramLabel {
+  font-size: 12px;
+}
+
+/* ===== Feature Cards ===== */
+.featuresSection {
+  margin-bottom: 36px;
+}
+
+.featuresTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  font-family: var(--font-roboto);
+  margin-bottom: 20px;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.featureCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: default;
+}
+
+.featureCard:hover {
+  border-color: var(--color-border-hover);
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 6px 24px var(--color-shadow-accent);
+}
+
+.featureIcon {
+  font-size: 28px;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--color-icon-card-gradient);
+  border: 1px solid var(--color-icon-card-border);
+}
+
+.featureCard:hover .featureIcon {
+  background: var(--color-icon-card-hover-gradient);
+}
+
+.featureContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.featureCardTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  font-family: var(--font-roboto);
+}
+
+.featureDescription {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  font-family: var(--font-roboto);
+}
+
+/* ===== Tech Badges ===== */
+.techSection {
+  margin-bottom: 28px;
+}
+
+.techBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ===== GitHub Link ===== */
+.githubLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: var(--font-roboto);
+  color: var(--color-accent-text);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.githubLink:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .container {
+    margin-top: 60px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .diagramFlow {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .diagramArrow {
+    transform: rotate(90deg);
+  }
+
+  .diagramBranch {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .diagramNode {
+    min-width: 80px;
+  }
+}
+
+@media (max-width: 500px) {
+  .tryButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .diagram {
+    padding: 20px;
+  }
+
+  .diagramBranch {
+    flex-direction: column;
+  }
+
+  .featureCard {
+    padding: 16px;
+  }
+
+  .featureIcon {
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+  }
+}

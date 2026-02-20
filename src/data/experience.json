@@ -1,31 +1,32 @@
 [
   {
-    "role": "Software Development Engineer, E-commerce",
-    "organisation": "Ford Motor Company Private Ltd",
-    "startDate": "July, 2021",
-    "endDate": "July, 2023",
+    "role": "Software Engineer, Microservices Team",
+    "organisation": "Saayam For All",
+    "startDate": "Jul, 2025",
+    "endDate": "Present",
+    "location": "San Jose, CA",
+    "experiences": [
+      "Owned backend services for volunteer onboarding, designing Spring Boot APIs and PostgreSQL schemas to support multi-step workflows with sub-200ms latency for 500+ active users",
+      "Built responsive React dashboard for volunteer management, implementing Redux state management and real-time status updates, reducing page load time by 40%",
+      "Contributed to AWS-based microservices architecture, resolving 15+ merge conflicts and stabilizing CI/CD pipelines across releases",
+      "Integrated AI-powered workflows using LangChain and OpenAI API for automated volunteer matching, implementing semantic search and intelligent recommendations that improved match accuracy by 35%"
+    ],
+    "imageLogo": "saayam-logo.png"
+  },
+  {
+    "role": "Software Development Engineer, E-Commerce",
+    "organisation": "Ford Motor Company",
+    "startDate": "Jun, 2021",
+    "endDate": "Jul, 2023",
     "location": "Chennai, India",
     "experiences": [
-      "Successfully integrated Payments API and Discount REST API into the E-Commerce system, enhancing overall functionality of product-based projects by designing API contracts according to business requirements.",
-      "Implemented REST APIs, developed features, and fixed bugs for various business scenarios, including the creation of a delivery dates REST API, improving user experience and operational effectiveness.",
-      "Designed and implemented a cron job to systematically remove orders with expired delivery dates, optimizing order management processes and maintaining data integrity.",
-      "Conducted comprehensive end-to-end testing using tools such as Postman and BackOffice to validate the functionality and integrity of developed features.",
-      "Utilized Jenkins for streamlined testing and deployment processes, ensuring timely delivery of the latest release."
+      "Developed Spring Boot microservices for payment and delivery integrations using TDD and Pair Programming in an Agile-XP environment, improving efficiency by 25%",
+      "Automated order-expiry workflows using Python, SQL, and cron jobs with retries and alerting, reducing data inconsistencies by 30% and manual intervention by 40%",
+      "Implemented OAuth 2.0 and JWT-based authentication across multiple services, cutting auth-related incidents by 40%",
+      "Wrote JUnit and Mockito test suites using a Test-first approach, reducing production defects by 25% across 200+ integration scenarios",
+      "Built internal React-based admin UI components for order monitoring and failure triage, improving operational visibility and reducing investigation time for support teams",
+      "Performed root cause analysis on 100+ customer issues, collaborating cross-functionally and tracking resolutions in JIRA"
     ],
     "imageLogo": "Ford-Logo-2.png"
-  }
-  ,
-  {
-    "role": "Software Intern",
-    "organisation": "Qubicle",
-    "startDate": "May, 2020",
-    "endDate": "Aug, 2020",
-    "location": "Doha, Qatar",
-    "experiences": [
-      "Architected a responsive event scheduling platform using React, Redux, Next, Node/Express, and MongoDB, enabling responsive UI rendering and real-time data synchronization.",
-      "Played a key role in refining API responses and actively enhancing overall system functionality.",
-      "Conducted code reviews, optimized API efficiency, and provided mentorship in debugging and performance improvements across full-stack development tasks."
-    ],
-    "imageLogo": "qubicle-logo.png"
   }
 ]

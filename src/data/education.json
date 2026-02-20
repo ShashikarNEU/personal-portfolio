@@ -1,20 +1,34 @@
 [
   {
-    "school": "Northeastern University, Boston",
+    "school": "Northeastern University",
     "degree": "MS in Information Systems",
-    "startDate": "Sept,2023",
-    "endDate": "June,2025",
+    "startDate": "Sept 2023",
+    "endDate": "Jun 2025",
     "place": "Boston, MA",
-    "gpa": "3.7",
+    "gpa": "3.7 / 4.0",
+    "coursework": [
+      "Web Design",
+      "Cloud Computing",
+      "Data Structures & Algorithms",
+      "Database Management",
+      "Network Structures"
+    ],
     "imageLogo": "NEU-Logo-4.png"
   },
   {
     "school": "National Institute of Technology, Warangal",
     "degree": "B.Tech in Computer Science Engineering",
-    "startDate": "Sept,2017",
-    "endDate": "May,2021",
-    "place": "Telangana, IN",
-    "gpa": "3.3",
+    "startDate": "Sept 2017",
+    "endDate": "May 2021",
+    "place": "Telangana, India",
+    "gpa": "3.3 / 4.0",
+    "coursework": [
+      "Operating Systems",
+      "Computer Networks",
+      "Object-Oriented Programming",
+      "Software Engineering",
+      "Machine Learning"
+    ],
     "imageLogo": "NITW-Logo-1.png"
   }
 ]

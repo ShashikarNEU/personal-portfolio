@@ -1,3 +1,5 @@
+@import "./vars.css";
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -11,6 +13,7 @@ html {
 
 body {
   overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Custom Scrollbar */
@@ -19,34 +22,34 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg);
+  background: var(--color-scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #5dd6ac, #2828e9);
+  background: var(--gradient-accent-reverse);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #2828e9, #5dd6ac);
+  background: var(--gradient-accent-reverse-flip);
 }
 
 /* Focus styles for accessibility */
 a:focus-visible,
 button:focus-visible,
 [role="button"]:focus-visible {
-  outline: 2px solid #5dd6ac;
+  outline: 2px solid var(--color-focus-ring);
   outline-offset: 4px;
   border-radius: 4px;
 }
 
 /* Selection styling */
 ::selection {
-  background: rgba(93, 214, 172, 0.3);
-  color: #fff;
+  background: var(--color-selection-bg);
+  color: var(--color-selection-text);
 }
 
 ::-moz-selection {
-  background: rgba(93, 214, 172, 0.3);
-  color: #fff;
+  background: var(--color-selection-bg);
+  color: var(--color-selection-text);
 }

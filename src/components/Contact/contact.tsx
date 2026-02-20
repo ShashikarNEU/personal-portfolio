@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
         <p className={styles.desc}>
           I'm always open to discussing new opportunities, interesting projects, or just having a chat. Feel free to reach out!
         </p>
-        
+
         <div className={styles.contactGrid}>
           <a href="mailto:anthoniraj.s@northeastern.edu" className={styles.contactCard}>
             <div className={styles.cardIcon}>✉️</div>
@@ -46,9 +46,9 @@ const Contact: React.FC = () => {
             <span className={styles.cardLink}>Send an email →</span>
           </a>
 
-          <a 
-            href="https://www.linkedin.com/in/shashikar-anthoniraj/" 
-            target="_blank" 
+          <a
+            href="https://www.linkedin.com/in/shashikar-anthoniraj/"
+            target="_blank"
             rel="noopener noreferrer"
             className={styles.contactCard}
           >
@@ -58,9 +58,9 @@ const Contact: React.FC = () => {
             <span className={styles.cardLink}>Connect with me →</span>
           </a>
 
-          <a 
-            href="https://github.com/ShashikarNEU" 
-            target="_blank" 
+          <a
+            href="https://github.com/ShashikarNEU"
+            target="_blank"
             rel="noopener noreferrer"
             className={styles.contactCard}
           >
@@ -71,9 +71,9 @@ const Contact: React.FC = () => {
           </a>
         </div>
       </div>
-      
+
       <footer className={styles.footer}>
-        <p className={styles.copyright}>© 2024 Shashikar Anthoniraj. All rights reserved.</p>
+        <p className={styles.copyright}>© {new Date().getFullYear()} Shashikar Anthoniraj. All rights reserved.</p>
       </footer>
     </section>
   );

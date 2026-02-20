@@ -4,7 +4,38 @@
   background-color: var(--color-bg);
   width: 100%;
   height: 100%;
+  position: relative;
 
-  color: white;
+  color: var(--color-text);
   scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.App::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 30%, var(--gradient-mesh-1), transparent),
+    radial-gradient(ellipse 50% 60% at 85% 15%, var(--gradient-mesh-2), transparent),
+    radial-gradient(ellipse 70% 50% at 50% 80%, var(--gradient-mesh-3), transparent);
+  animation: meshDrift 25s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes meshDrift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(15px, -10px) scale(1.02);
+  }
+  66% {
+    transform: translate(-10px, 12px) scale(0.98);
+  }
+  100% {
+    transform: translate(8px, -8px) scale(1.01);
+  }
 }

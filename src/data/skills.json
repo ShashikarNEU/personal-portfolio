@@ -57,19 +57,19 @@
       },
       {
         "name": "Python",
-        "image":"https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+        "image": "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
       },
       {
         "name": "Spring",
-        "image":"https://img.icons8.com/?size=100&id=90519&format=png&color=000000"
+        "image": "https://img.icons8.com/?size=100&id=90519&format=png&color=000000"
       },
       {
         "name": "REST API",
-        "image":"https://img.icons8.com/?size=100&id=LrB_kOjv7CUB&format=png&color=000000"
+        "image": "https://img.icons8.com/?size=100&id=LrB_kOjv7CUB&format=png&color=000000"
       },
       {
         "name": "C++",
-        "image":"https://img.icons8.com/?size=100&id=40669&format=png&color=000000"
+        "image": "https://img.icons8.com/?size=100&id=40669&format=png&color=000000"
       }
     ]
   },
@@ -94,7 +94,7 @@
       },
       {
         "name": "Oracle DB",
-        "image":"https://img.icons8.com/?size=100&id=39913&format=png&color=000000"
+        "image": "https://img.icons8.com/?size=100&id=39913&format=png&color=000000"
       }
     ]
   },
@@ -128,6 +128,43 @@
     ]
   },
   {
+    "title": "AI / GenAI",
+    "skills": [
+      {
+        "name": "LangChain",
+        "image": "https://api.nuget.org/v3-flatcontainer/langchain/0.12.3-dev.1/icon"
+      },
+      {
+        "name": "LangGraph",
+        "image": "https://api.nuget.org/v3-flatcontainer/langchain/0.12.3-dev.1/icon"
+      },
+      {
+        "name": "OpenAI SDK",
+        "image": "https://img.icons8.com/?size=100&id=FBO05Dys9QCg&format=png&color=000000"
+      },
+      {
+        "name": "RAG",
+        "image": "https://img.icons8.com/?size=100&id=laYYF3dV0Iew&format=png&color=000000"
+      },
+      {
+        "name": "Prompt Engineering",
+        "image": "https://img.icons8.com/?size=100&id=kTTt25v6Drpd&format=png&color=000000"
+      },
+      {
+        "name": "ChromaDB",
+        "image": "https://raw.githubusercontent.com/chroma-core/chroma/main/docs/assets/chroma-wordmark-color.png"
+      },
+      {
+        "name": "LangSmith",
+        "image": "https://img.icons8.com/?size=100&id=sop9ROXku5bb&format=png&color=000000"
+      },
+      {
+        "name": "Hugging Face",
+        "image": "https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.png"
+      }
+    ]
+  },
+  {
     "title": "Others",
     "skills": [
       {
@@ -144,11 +181,11 @@
       },
       {
         "name": "Postman",
-        "image":  "https://img.icons8.com/?size=100&id=32VTxWwd6gOB&format=png&color=000000"
+        "image": "https://img.icons8.com/?size=100&id=32VTxWwd6gOB&format=png&color=000000"
       },
       {
         "name": "IntelliJ",
-        "image":  "https://img.icons8.com/?size=100&id=61466&format=png&color=000000"
+        "image": "https://img.icons8.com/?size=100&id=61466&format=png&color=000000"
       }
     ]
   }
