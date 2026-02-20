@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+# Personal Portfolio — Shashikar Anthoni Raj
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive **personal portfolio website** built with **React.js**, showcasing projects, skills, experience, and contact information. Deployed live at [shashikaranthoniraj.netlify.app](https://shashikaranthoniraj.netlify.app).
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Live Demo
 
-### `npm start`
+🌐 [shashikaranthoniraj.netlify.app](https://shashikaranthoniraj.netlify.app)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Tech Stack
 
-### `npm test`
+| Tool | Purpose |
+|------|---------|
+| React.js | Frontend framework |
+| CSS Modules / Styled Components | Styling |
+| Netlify | Deployment and hosting |
+| Create React App | Project scaffolding |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Sections
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Hero** — Introduction and call-to-action
+- **About** — Background, education, and career summary
+- **Skills** — Technical skills across languages, frameworks, cloud, and tools
+- **Experience** — Work history at Saayam For All and Ford Motor Company
+- **Projects** — Highlighted projects with descriptions and GitHub links
+- **Contact** — Direct contact form and social links
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Featured Projects
 
-### `npm run eject`
+| Project | Description |
+|---------|-------------|
+| Portfolio RAG Chatbot | LangGraph + Pinecone RAG chatbot that answers questions about my portfolio |
+| Sidekick AI Agent | Autonomous LangGraph agent with browser, search, and code execution tools |
+| Plan API | Distributed REST API with Redis, Elasticsearch, RabbitMQ, and Google OAuth |
+| Cloud Web App | Spring Boot app deployed on GCP with Terraform, CI/CD, and auto-scaling |
+| locAll | Full-stack community marketplace with Mapbox, Stripe, and weather integrations |
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started (Local Development)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Prerequisites
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Node.js 16+
+- npm
 
-## Learn More
+### 1. Clone the Repository
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+git clone https://github.com/ShashikarNEU/personal-portfolio.git
+cd personal-portfolio
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Run Locally
+
+```bash
+npm start
+```
+
+App runs at `http://localhost:3000`.
+
+### 4. Build for Production
+
+```bash
+npm run build
+```
+
+---
+
+## Deployment
+
+The portfolio is deployed on **Netlify** with continuous deployment from the `master` branch. Any push to `master` triggers an automatic rebuild and deploy.
+
+---
+
+## About Me
+
+I'm a Software Engineer with 2.5+ years of experience, currently transitioning toward **AI/ML Engineering**. I hold an MS in Information Systems from Northeastern University and a B.Tech from NIT Warangal.
+
+- 🔗 [LinkedIn](https://linkedin.com/in/shashikar-anthoniraj)
+- 🐙 [GitHub](https://github.com/ShashikarNEU)
+- 📧 anthoniraj.s@northeastern.edu
