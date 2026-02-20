@@ -28,6 +28,18 @@ const features = [
     title: 'Contact Agent',
     description: 'Send messages directly via email',
   },
+  {
+    icon: '💾',
+    title: 'Conversation Memory',
+    description: 'SQLite-backed thread persistence across sessions',
+  },
+];
+
+const stats = [
+  { value: '6', label: 'AI Tools' },
+  { value: 'Real-Time', label: 'SSE Streaming' },
+  { value: 'Multi-Agent', label: 'RAG Pipeline' },
+  { value: '< 3s', label: 'First Token' },
 ];
 
 const techStack = [
@@ -41,18 +53,6 @@ const techStack = [
   'SendGrid',
   'Python',
   'TypeScript',
-];
-
-const diagramSteps = [
-  { label: 'User Message', icon: '💬' },
-  { label: 'FastAPI', icon: '⚡' },
-  { label: 'LangGraph Agent', icon: '🧠' },
-];
-
-const diagramTools = [
-  { label: 'RAG Search', icon: '🔍' },
-  { label: 'GitHub API', icon: '🐙' },
-  { label: 'Email Agent', icon: '📧' },
 ];
 
 const AIShowcase: React.FC = () => {
@@ -101,7 +101,7 @@ const AIShowcase: React.FC = () => {
             and source code — or send me a message directly.
           </p>
           <button className={styles.tryButton} onClick={handleTryAssistant}>
-            Try the AI Assistant
+            <span className={styles.tryButtonText}>Try the AI Assistant</span>
             <svg
               width="16"
               height="16"
@@ -118,82 +118,107 @@ const AIShowcase: React.FC = () => {
           </button>
         </div>
 
+        {/* Stats Row */}
+        <div className={styles.statsRow}>
+          {stats.map((stat, i) => (
+            <div
+              className={`${styles.statCard} ${isVisible ? styles.statVisible : ''}`}
+              key={stat.label}
+              style={{ animationDelay: `${0.2 + i * 0.1}s` }}
+            >
+              <span className={styles.statValue}>{stat.value}</span>
+              <span className={styles.statLabel}>{stat.label}</span>
+            </div>
+          ))}
+        </div>
+
         {/* Architecture Diagram */}
         <div className={styles.diagram}>
           <h3 className={styles.diagramTitle}>Architecture</h3>
           <div className={styles.diagramFlow}>
-            {diagramSteps.map((step, i) => (
-              <React.Fragment key={step.label}>
-                <div className={styles.diagramNode}>
-                  <span className={styles.diagramIcon}>{step.icon}</span>
-                  <span className={styles.diagramLabel}>{step.label}</span>
-                </div>
-                {i < diagramSteps.length - 1 && (
-                  <div className={styles.diagramArrow}>
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className={styles.arrowIcon}
-                    >
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </div>
-                )}
-              </React.Fragment>
-            ))}
+            {/* Main pipeline: User → FastAPI → LangGraph Agent */}
+            <div className={`${styles.diagramNode} ${styles.nodeUser}`}>
+              <span className={styles.diagramIcon}>💬</span>
+              <span className={styles.diagramLabel}>User Message</span>
+            </div>
 
-            {/* Branch to tools */}
-            <div className={styles.diagramArrow}>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className={styles.arrowIcon}
-              >
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
+            <div className={styles.diagramArrowAnimated}>
+              <div className={styles.arrowLine}>
+                <div className={styles.arrowDot} />
+              </div>
+              <svg className={styles.arrowHead} width="12" height="12" viewBox="0 0 12 12">
+                <path d="M2 2 L10 6 L2 10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
+
+            <div className={`${styles.diagramNode} ${styles.nodeFastapi}`}>
+              <span className={styles.diagramIcon}>⚡</span>
+              <span className={styles.diagramLabel}>FastAPI</span>
+            </div>
+
+            <div className={styles.diagramArrowAnimated}>
+              <div className={styles.arrowLine}>
+                <div className={styles.arrowDot} />
+              </div>
+              <svg className={styles.arrowHead} width="12" height="12" viewBox="0 0 12 12">
+                <path d="M2 2 L10 6 L2 10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+
+            <div className={`${styles.diagramNode} ${styles.nodeAgent}`}>
+              <span className={styles.diagramIcon}>🧠</span>
+              <span className={styles.diagramLabel}>LangGraph Agent</span>
+            </div>
+
+            <div className={styles.diagramArrowAnimated}>
+              <div className={styles.arrowLine}>
+                <div className={styles.arrowDot} />
+              </div>
+              <svg className={styles.arrowHead} width="12" height="12" viewBox="0 0 12 12">
+                <path d="M2 2 L10 6 L2 10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+
+            {/* Tool branch */}
             <div className={styles.diagramBranch}>
-              {diagramTools.map((tool) => (
-                <div className={styles.diagramToolNode} key={tool.label}>
-                  <span className={styles.diagramIcon}>{tool.icon}</span>
-                  <span className={styles.diagramLabel}>{tool.label}</span>
-                </div>
-              ))}
+              <div className={`${styles.diagramToolNode} ${styles.toolRag}`}>
+                <span className={styles.diagramIcon}>🔍</span>
+                <span className={styles.diagramLabel}>RAG Search</span>
+              </div>
+              <div className={`${styles.diagramToolNode} ${styles.toolGithub}`}>
+                <span className={styles.diagramIcon}>🐙</span>
+                <span className={styles.diagramLabel}>GitHub API</span>
+              </div>
+              <div className={`${styles.diagramToolNode} ${styles.toolEmail}`}>
+                <span className={styles.diagramIcon}>📧</span>
+                <span className={styles.diagramLabel}>Email Agent</span>
+              </div>
             </div>
 
-            <div className={styles.diagramArrow}>
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className={styles.arrowIcon}
-              >
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
+            <div className={styles.diagramArrowAnimated}>
+              <div className={styles.arrowLine}>
+                <div className={styles.arrowDot} />
+              </div>
+              <svg className={styles.arrowHead} width="12" height="12" viewBox="0 0 12 12">
+                <path d="M2 2 L10 6 L2 10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <div className={styles.diagramNode}>
+
+            <div className={`${styles.diagramNode} ${styles.nodeResponse}`}>
               <span className={styles.diagramIcon}>✨</span>
               <span className={styles.diagramLabel}>Response</span>
+            </div>
+          </div>
+
+          {/* SQLite persistence layer */}
+          <div className={styles.persistenceLayer}>
+            <div className={styles.persistenceConnector}>
+              <div className={styles.persistenceConnectorLine} />
+            </div>
+            <div className={`${styles.diagramNode} ${styles.nodeSqlite}`}>
+              <span className={styles.diagramIcon}>💾</span>
+              <span className={styles.diagramLabel}>SQLite</span>
+              <span className={styles.persistenceSubLabel}>Thread Memory</span>
             </div>
           </div>
         </div>
@@ -202,8 +227,13 @@ const AIShowcase: React.FC = () => {
         <div className={styles.featuresSection}>
           <h3 className={styles.featuresTitle}>How it works</h3>
           <div className={styles.featuresGrid}>
-            {features.map((feature) => (
-              <div className={styles.featureCard} key={feature.title}>
+            {features.map((feature, index) => (
+              <div
+                className={`${styles.featureCard} ${isVisible ? styles.cardVisible : ''}`}
+                key={feature.title}
+                style={{ animationDelay: `${0.3 + index * 0.08}s` }}
+              >
+                <div className={styles.cardGlow} />
                 <div className={styles.featureIcon}>{feature.icon}</div>
                 <div className={styles.featureContent}>
                   <h4 className={styles.featureCardTitle}>{feature.title}</h4>

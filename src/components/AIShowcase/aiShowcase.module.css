@@ -67,8 +67,9 @@
   margin-top: 20px;
 }
 
-/* ===== Try Button ===== */
+/* ===== Try Button with Shimmer ===== */
 .tryButton {
+  position: relative;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -83,6 +84,27 @@
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.tryButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: none;
+}
+
+.tryButton:hover::before {
+  animation: shimmer 0.8s ease forwards;
 }
 
 .tryButton:hover {
@@ -94,6 +116,87 @@
   transform: translateY(0);
 }
 
+.tryButtonText {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* ===== Stats Row ===== */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.statCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 16px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(93, 214, 172, 0.08) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.statCard.statVisible {
+  animation: statFadeIn 0.5s ease-out forwards;
+}
+
+@keyframes statFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.statValue {
+  font-size: 22px;
+  font-weight: 700;
+  font-family: var(--font-roboto);
+  color: var(--color-accent-text);
+  letter-spacing: 0.5px;
+}
+
+.statLabel {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-roboto);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
 /* ===== Architecture Diagram ===== */
 .diagram {
   background: var(--color-bg-card);
@@ -101,6 +204,20 @@
   border-radius: 16px;
   padding: 28px;
   margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.diagram::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 30%,
+    rgba(93, 214, 172, 0.04) 0%,
+    transparent 60%
+  );
+  pointer-events: none;
 }
 
 .diagramTitle {
@@ -109,16 +226,19 @@
   color: var(--color-text);
   font-family: var(--font-roboto);
   margin-bottom: 24px;
+  position: relative;
 }
 
 .diagramFlow {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   flex-wrap: wrap;
   justify-content: center;
+  position: relative;
 }
 
+/* ===== Diagram Nodes ===== */
 .diagramNode {
   display: flex;
   flex-direction: column;
@@ -130,12 +250,43 @@
   border-radius: 12px;
   transition: all 0.3s ease;
   min-width: 100px;
+  position: relative;
 }
 
 .diagramNode:hover {
   border-color: var(--color-border-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 16px var(--color-shadow-accent);
+}
+
+/* Pulsing glow animation on nodes */
+.nodeUser {
+  animation: nodePulse 3s ease-in-out infinite;
+}
+
+.nodeFastapi {
+  animation: nodePulse 3s ease-in-out 0.5s infinite;
+}
+
+.nodeAgent {
+  animation: nodePulse 3s ease-in-out 1s infinite;
+}
+
+.nodeResponse {
+  animation: nodePulse 3s ease-in-out 1.5s infinite;
+}
+
+.nodeSqlite {
+  animation: nodePulse 3s ease-in-out 2s infinite;
+}
+
+@keyframes nodePulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(93, 214, 172, 0);
+  }
+  50% {
+    box-shadow: 0 0 12px 2px rgba(93, 214, 172, 0.15);
+  }
 }
 
 .diagramIcon {
@@ -152,17 +303,76 @@
   white-space: nowrap;
 }
 
-.diagramArrow {
+/* ===== Animated Arrow Connectors ===== */
+.diagramArrowAnimated {
   display: flex;
   align-items: center;
-  color: var(--color-accent);
+  gap: 2px;
   flex-shrink: 0;
+  color: var(--color-accent);
 }
 
-.arrowIcon {
-  opacity: 0.6;
+.arrowLine {
+  width: 32px;
+  height: 2px;
+  background: rgba(93, 214, 172, 0.2);
+  position: relative;
+  overflow: hidden;
+  border-radius: 1px;
 }
 
+.arrowDot {
+  position: absolute;
+  top: -2px;
+  left: -6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 6px rgba(93, 214, 172, 0.6);
+  animation: travelDot 2s linear infinite;
+}
+
+@keyframes travelDot {
+  0% {
+    left: -6px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: calc(100% + 6px);
+    opacity: 0;
+  }
+}
+
+/* Stagger arrow animations */
+.diagramArrowAnimated:nth-child(2) .arrowDot {
+  animation-delay: 0s;
+}
+
+.diagramArrowAnimated:nth-child(4) .arrowDot {
+  animation-delay: 0.4s;
+}
+
+.diagramArrowAnimated:nth-child(6) .arrowDot {
+  animation-delay: 0.8s;
+}
+
+.diagramArrowAnimated:nth-child(8) .arrowDot {
+  animation-delay: 1.2s;
+}
+
+.arrowHead {
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+/* ===== Tool Branch ===== */
 .diagramBranch {
   display: flex;
   flex-direction: column;
@@ -178,11 +388,40 @@
   border: 1px solid var(--color-skill-item-border);
   border-radius: 10px;
   transition: all 0.3s ease;
+  position: relative;
 }
 
 .diagramToolNode:hover {
   border-color: var(--color-border-hover);
   transform: translateX(4px);
+}
+
+/* Color-coded tool nodes */
+.toolRag {
+  border-color: rgba(93, 214, 172, 0.25);
+}
+
+.toolRag:hover {
+  box-shadow: 0 0 12px rgba(93, 214, 172, 0.15);
+  border-color: rgba(93, 214, 172, 0.4);
+}
+
+.toolGithub {
+  border-color: rgba(87, 108, 188, 0.25);
+}
+
+.toolGithub:hover {
+  box-shadow: 0 0 12px rgba(87, 108, 188, 0.15);
+  border-color: rgba(87, 108, 188, 0.4);
+}
+
+.toolEmail {
+  border-color: rgba(40, 40, 233, 0.2);
+}
+
+.toolEmail:hover {
+  box-shadow: 0 0 12px rgba(40, 40, 233, 0.15);
+  border-color: rgba(40, 40, 233, 0.35);
 }
 
 .diagramToolNode .diagramIcon {
@@ -191,6 +430,77 @@
 
 .diagramToolNode .diagramLabel {
   font-size: 12px;
+}
+
+/* ===== SQLite Persistence Layer ===== */
+.persistenceLayer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4px;
+  position: relative;
+}
+
+.persistenceConnector {
+  display: flex;
+  justify-content: center;
+  height: 24px;
+  position: relative;
+}
+
+.persistenceConnectorLine {
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(93, 214, 172, 0.3),
+    rgba(93, 214, 172, 0.1)
+  );
+  position: relative;
+}
+
+.persistenceConnectorLine::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.5;
+  animation: persistPulse 2s ease-in-out infinite;
+}
+
+@keyframes persistPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}
+
+.nodeSqlite {
+  padding: 12px 20px;
+  min-width: auto;
+  border-color: rgba(93, 214, 172, 0.2);
+  background: rgba(93, 214, 172, 0.04);
+}
+
+.nodeSqlite:hover {
+  border-color: rgba(93, 214, 172, 0.35);
+  box-shadow: 0 0 16px rgba(93, 214, 172, 0.12);
+}
+
+.persistenceSubLabel {
+  font-size: 10px;
+  color: var(--color-text-faint);
+  font-family: var(--font-roboto);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 /* ===== Feature Cards ===== */
@@ -208,11 +518,13 @@
 
 .featuresGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
 
+/* ===== Individual Feature Card with Pop-In ===== */
 .featureCard {
+  position: relative;
   display: flex;
   align-items: flex-start;
   gap: 14px;
@@ -220,14 +532,54 @@
   background: var(--color-bg-card);
   border: 1px solid var(--color-border);
   border-radius: 14px;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   cursor: default;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(12px) scale(0.95);
+  transition: border-color 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.featureCard.cardVisible {
+  animation: cardPopIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes cardPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Radial gradient glow overlay */
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(93, 214, 172, 0.12) 0%,
+    rgba(40, 40, 233, 0.06) 50%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+.featureCard:hover .cardGlow {
+  opacity: 1;
 }
 
 .featureCard:hover {
   border-color: var(--color-border-hover);
-  transform: translateY(-3px) scale(1.01);
-  box-shadow: 0 6px 24px var(--color-shadow-accent);
+  transform: translateY(-6px) scale(1.04);
+  box-shadow:
+    0 8px 24px rgba(93, 214, 172, 0.12),
+    0 0 0 1px rgba(93, 214, 172, 0.08);
 }
 
 .featureIcon {
@@ -242,6 +594,9 @@
   border-radius: 10px;
   background: var(--color-icon-card-gradient);
   border: 1px solid var(--color-icon-card-border);
+  transition: background 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .featureCard:hover .featureIcon {
@@ -252,6 +607,8 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  position: relative;
+  z-index: 1;
 }
 
 .featureCardTitle {
@@ -298,6 +655,12 @@
 }
 
 /* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     margin-top: 60px;
@@ -311,6 +674,19 @@
     font-size: 15px;
   }
 
+  .statsRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .statCard {
+    padding: 16px 12px;
+  }
+
+  .statValue {
+    font-size: 18px;
+  }
+
   .featuresGrid {
     grid-template-columns: 1fr;
   }
@@ -320,7 +696,7 @@
     gap: 8px;
   }
 
-  .diagramArrow {
+  .diagramArrowAnimated {
     transform: rotate(90deg);
   }
 
@@ -338,6 +714,23 @@
   .tryButton {
     width: 100%;
     justify-content: center;
+  }
+
+  .statsRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .statCard {
+    padding: 14px 10px;
+  }
+
+  .statValue {
+    font-size: 16px;
+  }
+
+  .statLabel {
+    font-size: 10px;
   }
 
   .diagram {
