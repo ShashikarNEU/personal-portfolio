@@ -88,7 +88,7 @@ The portfolio is deployed on **Netlify** with continuous deployment from the `ma
 
 ## About Me
 
-I'm a Software Engineer with 2.5+ years of experience, currently transitioning toward **AI/ML Engineering**. I hold an MS in Information Systems from Northeastern University and a B.Tech from NIT Warangal.
+I'm a Software Engineer with 2.5+ years of SDE experience, currently interested in **AI/ML Engineering**. I hold an MS in Information Systems from Northeastern University and a B.Tech from NIT Warangal.
 
 - 🔗 [LinkedIn](https://linkedin.com/in/shashikar-anthoniraj)
 - 🐙 [GitHub](https://github.com/ShashikarNEU)
