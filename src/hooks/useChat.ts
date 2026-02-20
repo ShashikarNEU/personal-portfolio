@@ -35,19 +35,6 @@ function getOrCreateThreadId(): string {
   return id;
 }
 
-function toolNameToStep(name: string): string {
-  const lower = name.toLowerCase();
-  if (lower.includes("search") || lower.includes("portfolio"))
-    return "Searching knowledge base...";
-  if (lower.includes("file_content") || lower.includes("read"))
-    return "Reading source code...";
-  if (lower.includes("github") || lower.includes("repo"))
-    return "Fetching live GitHub data...";
-  if (lower.includes("email") || lower.includes("send"))
-    return "Sending email...";
-  return `Running ${name}...`;
-}
-
 export function useChat() {
   const [messages, setMessages] = useState<ChatMessageData[]>([
     WELCOME_MESSAGE,
