@@ -1,5 +1,27 @@
 [
   {
+    "id": 3,
+    "title": "Cloud Web Application",
+    "date": "Jan 2024 - April 2024",
+    "description": "Developed cloud-native web applications using SpringBoot and Hibernate, with Terraform for Infrastructure as Code (IaC) on Google Cloud Platform (GCP). Built and managed resources like VMs, Cloud SQL, and VPCs. Implemented CI pipelines using GitHub Actions for testing and provisioning, and orchestrated a serverless architecture with Google Cloud Functions and Pub/Sub for real-time event-driven notifications. Configured DNS, load balancing, and autoscaling to ensure scalable, robust solutions.",
+    "image": "CloudNativeApplication.png",
+    "tags": [
+      "GCP",
+      "Pub/Sub",
+      "REST API",
+      "Terraform",
+      "Cloud SQL",
+      "CI/CD",
+      "Load balancing",
+      "HCP Packer",
+      "SpringBoot",
+      "Hibernate"
+    ],
+    "category": "cloud",
+    "github": "https://github.com/ShashikarA-CSYE6225",
+    "webapp": "https://github.com/ShashikarA-CSYE6225"
+  },
+  {
     "id": 1,
     "title": "Geo-Aware Community Marketplace",
     "date": "Nov 2024 - Dec 2024",
@@ -40,26 +62,24 @@
     "webapp": "https://github.com/ShashikarNEU/sidekick_project"
   },
   {
-    "id": 3,
-    "title": "Cloud Web Application",
-    "date": "Jan 2024 - April 2024",
-    "description": "Developed cloud-native web applications using SpringBoot and Hibernate, with Terraform for Infrastructure as Code (IaC) on Google Cloud Platform (GCP). Built and managed resources like VMs, Cloud SQL, and VPCs. Implemented CI pipelines using GitHub Actions for testing and provisioning, and orchestrated a serverless architecture with Google Cloud Functions and Pub/Sub for real-time event-driven notifications. Configured DNS, load balancing, and autoscaling to ensure scalable, robust solutions.",
-    "image": "CloudNativeApplication.png",
+    "id": 7,
+    "title": "Portfolio RAG Chatbot",
+    "date": "May 2026",
+    "description": "A production-ready portfolio assistant backed by a FastAPI and LangGraph backend. It streams answers with SSE, uses Pinecone-backed retrieval, inspects GitHub repositories, preserves conversation threads, handles rate limits, and can route contact requests through SendGrid.",
+    "image": "PortfolioRAGChatbot.svg",
     "tags": [
-      "GCP",
-      "Pub/Sub",
-      "REST API",
-      "Terraform",
-      "Cloud SQL",
-      "CI/CD",
-      "Load balancing",
-      "HCP Packer",
-      "SpringBoot",
-      "Hibernate"
+      "FastAPI",
+      "LangGraph",
+      "RAG",
+      "Pinecone",
+      "OpenAI",
+      "React",
+      "SSE",
+      "SendGrid"
     ],
-    "category": "cloud",
-    "github": "https://github.com/ShashikarA-CSYE6225",
-    "webapp": "https://github.com/ShashikarA-CSYE6225"
+    "category": "Backend / RAG",
+    "github": "https://github.com/ShashikarNEU/portfolio-rag-chatbot",
+    "webapp": "https://shashikaranthoniraj.netlify.app"
   },
   {
     "id": 4,

@@ -3,12 +3,12 @@ import styles from './skills.module.css';
 import skills from '../../data/skills.json';
 
 const categoryIcons: Record<string, string> = {
-  'Frontend': '🎨',
-  'Backend': '⚙️',
-  'Databases': '🗃️',
-  'DevOps': '☁️',
-  'AI / GenAI': '🤖',
-  'Others': '🛠️',
+  'Frontend': 'FE',
+  'Backend': 'BE',
+  'Databases': 'DB',
+  'DevOps': 'CL',
+  'AI / GenAI': 'AI',
+  'Others': 'TO',
 };
 
 const Skills: React.FC = () => {
@@ -75,7 +75,7 @@ const Skills: React.FC = () => {
               onClick={() => handleCategoryChange(cat)}
             >
               {cat !== 'All' && (
-                <span className={styles.filterIcon}>{categoryIcons[cat] || '📌'}</span>
+                <span className={styles.filterIcon}>{categoryIcons[cat] || 'SK'}</span>
               )}
               {cat}
             </button>
@@ -88,7 +88,7 @@ const Skills: React.FC = () => {
             <React.Fragment key={category.title}>
               {activeCategory === 'All' && (
                 <div className={styles.categoryLabel}>
-                  <span className={styles.categoryIcon}>{categoryIcons[category.title] || '📌'}</span>
+                  <span className={styles.categoryIcon}>{categoryIcons[category.title] || 'SK'}</span>
                   <span>{category.title}</span>
                   <span className={styles.categoryLine} />
                 </div>

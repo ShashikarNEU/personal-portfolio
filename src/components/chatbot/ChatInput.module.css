@@ -1,6 +1,56 @@
 .container {
-  padding: 10px 14px;
+  padding: 12px 14px 14px;
   border-top: 1px solid var(--color-chat-panel-border);
+}
+
+.voiceModeRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.voiceModeBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 800;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.voiceModeBtn:hover:not(:disabled),
+.voiceModeBtnActive {
+  color: var(--color-accent);
+  border-color: var(--color-border-hover);
+  background: rgba(93, 214, 172, 0.11);
+}
+
+.voiceModeBtn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.voiceModeDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 4px rgba(93, 214, 172, 0.08);
+}
+
+.voiceHint {
+  color: var(--color-text-faint);
+  font-size: 11px;
+  line-height: 1.35;
 }
 
 .inputRow {
@@ -13,7 +63,7 @@
   flex: 1;
   background: var(--color-chat-input-bg);
   border: 1px solid var(--color-border);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 10px 14px;
   color: var(--color-text);
   font-family: inherit;
@@ -38,6 +88,7 @@
   cursor: not-allowed;
 }
 
+.voiceBtn,
 .sendBtn {
   width: 40px;
   height: 40px;
@@ -45,18 +96,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--gradient-accent);
   border: none;
-  border-radius: 10px;
-  color: #fff;
+  border-radius: 8px;
   cursor: pointer;
   transition: opacity 0.2s, transform 0.15s;
 }
 
+.voiceBtn {
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+}
+
+.voiceBtnActive {
+  color: var(--color-accent);
+  border-color: var(--color-border-hover);
+  background: rgba(93, 214, 172, 0.12);
+  box-shadow: 0 0 0 4px rgba(93, 214, 172, 0.08);
+}
+
+.sendBtn {
+  background: var(--gradient-accent);
+  color: #fff;
+}
+
+.voiceBtn:hover:not(:disabled),
 .sendBtn:hover:not(:disabled) {
   transform: scale(1.05);
 }
 
+.voiceBtn:disabled,
 .sendBtn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
@@ -72,4 +141,16 @@
 
 .charCount.warn {
   color: var(--color-chat-error-text);
+}
+
+@media (max-width: 420px) {
+  .voiceModeRow {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .voiceHint {
+    padding-left: 2px;
+  }
 }

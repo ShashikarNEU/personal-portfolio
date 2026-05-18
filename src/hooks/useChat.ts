@@ -21,7 +21,7 @@ export interface ChatMessageData {
 const WELCOME_MESSAGE: ChatMessageData = {
   id: "welcome",
   role: "bot",
-  text: "Hi! I'm Shashikar's AI assistant. Ask me about his projects, skills, or experience — or ask me to send him a message!",
+  text: "Hi! I'm Shashikar's portfolio assistant. Ask me about his backend work, projects, skills, or experience — or ask me to send him a message!",
   timestamp: Date.now(),
 };
 

@@ -1,5 +1,5 @@
-// Strip trailing /api/v1 if present for backward compat with existing env config
-const envUrl = process.env.REACT_APP_API_URL || "http://localhost:8000";
+const DEFAULT_API_BASE = "https://portfolio-rag-chatbot-x19x.onrender.com";
+const envUrl = process.env.REACT_APP_API_URL || DEFAULT_API_BASE;
 const API_BASE = envUrl.replace(/\/api\/v[12](\/.*)?$/, "");
 const STREAM_URL = `${API_BASE}/api/v2/chat/stream`;
 const SYNC_URL = `${API_BASE}/api/v1/chat`;

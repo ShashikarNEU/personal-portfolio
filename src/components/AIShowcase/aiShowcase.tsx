@@ -4,41 +4,111 @@ import TechBadge from './TechBadge';
 
 const features = [
   {
-    icon: '🔍',
+    icon: 'search',
     title: 'Semantic Search',
     description: 'Advanced RAG with query expansion & reranking',
   },
   {
-    icon: '🤖',
+    icon: 'github',
     title: 'Live GitHub Integration',
     description: 'Explores repos, reads code, analyzes architecture in real-time',
   },
   {
-    icon: '⚡',
+    icon: 'stream',
     title: 'Real-Time Streaming',
     description: 'SSE-powered token streaming with live thinking steps',
   },
   {
-    icon: '🛡️',
+    icon: 'shield',
     title: 'Smart Guardrails',
     description: 'Safe, scoped responses with prompt protection',
   },
   {
-    icon: '📧',
+    icon: 'mail',
     title: 'Contact Agent',
     description: 'Send messages directly via email',
   },
   {
-    icon: '💾',
+    icon: 'memory',
     title: 'Conversation Memory',
     description: 'SQLite-backed thread persistence across sessions',
   },
 ];
 
+type FeatureIconType = typeof features[number]['icon'];
+
+const FeatureGlyph = ({ type }: { type: FeatureIconType }) => {
+  const commonProps = {
+    width: 22,
+    height: 22,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 2,
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+  };
+
+  if (type === 'search') {
+    return (
+      <svg {...commonProps}>
+        <circle cx="11" cy="11" r="7" />
+        <path d="m20 20-3.5-3.5" />
+      </svg>
+    );
+  }
+
+  if (type === 'github') {
+    return (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 .8C5.8.8.8 5.8.8 12c0 5 3.2 9.2 7.7 10.7.6.1.8-.2.8-.5v-2.1c-3.1.7-3.8-1.3-3.8-1.3-.5-1.3-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.5 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.4.1-3 0 0 .9-.3 3.1 1.1a10.7 10.7 0 0 1 5.6 0c2.1-1.4 3.1-1.1 3.1-1.1.6 1.6.2 2.7.1 3 .7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.2-5.1 5.5.4.3.8 1 .8 2.1v3.1c0 .3.2.6.8.5A11.2 11.2 0 0 0 23.2 12C23.2 5.8 18.2.8 12 .8z" />
+      </svg>
+    );
+  }
+
+  if (type === 'stream') {
+    return (
+      <svg {...commonProps}>
+        <path d="M4 7h6" />
+        <path d="M4 12h10" />
+        <path d="M4 17h16" />
+        <path d="m16 8 4 4-4 4" />
+      </svg>
+    );
+  }
+
+  if (type === 'shield') {
+    return (
+      <svg {...commonProps}>
+        <path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6l-7-3z" />
+        <path d="m9 12 2 2 4-5" />
+      </svg>
+    );
+  }
+
+  if (type === 'mail') {
+    return (
+      <svg {...commonProps}>
+        <rect x="4" y="5" width="16" height="14" rx="2" />
+        <path d="m4 8 8 6 8-6" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg {...commonProps}>
+      <path d="M8 7h8" />
+      <path d="M8 12h8" />
+      <path d="M8 17h5" />
+      <rect x="5" y="3" width="14" height="18" rx="2" />
+    </svg>
+  );
+};
+
 const stats = [
-  { value: '6', label: 'AI Tools' },
+  { value: '6', label: 'Assistant Tools' },
   { value: 'Real-Time', label: 'SSE Streaming' },
-  { value: 'Multi-Agent', label: 'RAG Pipeline' },
+  { value: 'LangGraph', label: 'Workflow' },
   { value: '< 3s', label: 'First Token' },
 ];
 
@@ -93,15 +163,14 @@ const AIShowcase: React.FC = () => {
     >
       <div className={styles.wrapper}>
         <div className={styles.header}>
-          <h2 className={styles.title}>AI-Powered Portfolio</h2>
+          <h2 className={styles.title}>Portfolio Assistant System</h2>
           <p className={styles.subtitle}>
-            This portfolio features an AI chatbot powered by a multi-agent RAG
-            system with real-time SSE streaming. It can answer questions about
-            my projects, skills, and experience, explore my GitHub repositories
-            and source code — or send me a message directly.
+            A backend-focused assistant that demonstrates how I build practical
+            AI-enabled systems: FastAPI services, streaming responses, retrieval,
+            GitHub tooling, persistence, and contact automation working together.
           </p>
           <button className={styles.tryButton} onClick={handleTryAssistant}>
-            <span className={styles.tryButtonText}>Try the AI Assistant</span>
+            <span className={styles.tryButtonText}>Try the Assistant</span>
             <svg
               width="16"
               height="16"
@@ -134,11 +203,11 @@ const AIShowcase: React.FC = () => {
 
         {/* Architecture Diagram */}
         <div className={styles.diagram}>
-          <h3 className={styles.diagramTitle}>Architecture</h3>
+          <h3 className={styles.diagramTitle}>Backend architecture</h3>
           <div className={styles.diagramFlow}>
             {/* Main pipeline: User → FastAPI → LangGraph Agent */}
             <div className={`${styles.diagramNode} ${styles.nodeUser}`}>
-              <span className={styles.diagramIcon}>💬</span>
+              <span className={styles.diagramIcon}>UI</span>
               <span className={styles.diagramLabel}>User Message</span>
             </div>
 
@@ -152,7 +221,7 @@ const AIShowcase: React.FC = () => {
             </div>
 
             <div className={`${styles.diagramNode} ${styles.nodeFastapi}`}>
-              <span className={styles.diagramIcon}>⚡</span>
+              <span className={styles.diagramIcon}>API</span>
               <span className={styles.diagramLabel}>FastAPI</span>
             </div>
 
@@ -166,7 +235,7 @@ const AIShowcase: React.FC = () => {
             </div>
 
             <div className={`${styles.diagramNode} ${styles.nodeAgent}`}>
-              <span className={styles.diagramIcon}>🧠</span>
+              <span className={styles.diagramIcon}>LG</span>
               <span className={styles.diagramLabel}>LangGraph Agent</span>
             </div>
 
@@ -182,15 +251,15 @@ const AIShowcase: React.FC = () => {
             {/* Tool branch */}
             <div className={styles.diagramBranch}>
               <div className={`${styles.diagramToolNode} ${styles.toolRag}`}>
-                <span className={styles.diagramIcon}>🔍</span>
+                <span className={styles.diagramIcon}>RAG</span>
                 <span className={styles.diagramLabel}>RAG Search</span>
               </div>
               <div className={`${styles.diagramToolNode} ${styles.toolGithub}`}>
-                <span className={styles.diagramIcon}>🐙</span>
+                <span className={styles.diagramIcon}>GH</span>
                 <span className={styles.diagramLabel}>GitHub API</span>
               </div>
               <div className={`${styles.diagramToolNode} ${styles.toolEmail}`}>
-                <span className={styles.diagramIcon}>📧</span>
+                <span className={styles.diagramIcon}>MAIL</span>
                 <span className={styles.diagramLabel}>Email Agent</span>
               </div>
             </div>
@@ -205,7 +274,7 @@ const AIShowcase: React.FC = () => {
             </div>
 
             <div className={`${styles.diagramNode} ${styles.nodeResponse}`}>
-              <span className={styles.diagramIcon}>✨</span>
+              <span className={styles.diagramIcon}>OUT</span>
               <span className={styles.diagramLabel}>Response</span>
             </div>
           </div>
@@ -216,7 +285,7 @@ const AIShowcase: React.FC = () => {
               <div className={styles.persistenceConnectorLine} />
             </div>
             <div className={`${styles.diagramNode} ${styles.nodeSqlite}`}>
-              <span className={styles.diagramIcon}>💾</span>
+              <span className={styles.diagramIcon}>DB</span>
               <span className={styles.diagramLabel}>SQLite</span>
               <span className={styles.persistenceSubLabel}>Thread Memory</span>
             </div>
@@ -225,7 +294,7 @@ const AIShowcase: React.FC = () => {
 
         {/* Feature Cards */}
         <div className={styles.featuresSection}>
-          <h3 className={styles.featuresTitle}>How it works</h3>
+          <h3 className={styles.featuresTitle}>How the assistant works</h3>
           <div className={styles.featuresGrid}>
             {features.map((feature, index) => (
               <div
@@ -234,7 +303,9 @@ const AIShowcase: React.FC = () => {
                 style={{ animationDelay: `${0.3 + index * 0.08}s` }}
               >
                 <div className={styles.cardGlow} />
-                <div className={styles.featureIcon}>{feature.icon}</div>
+                <div className={styles.featureIcon}>
+                  <FeatureGlyph type={feature.icon} />
+                </div>
                 <div className={styles.featureContent}>
                   <h4 className={styles.featureCardTitle}>{feature.title}</h4>
                   <p className={styles.featureDescription}>

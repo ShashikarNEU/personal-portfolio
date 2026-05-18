@@ -20,8 +20,8 @@ function App() {
       <div id="experience"><Experience /></div>
       <div id="education"><Education /></div>
       <div id="skills"><Skills /></div>
-      <div id="ai-showcase"><AIShowcase /></div>
       <div id="projects"><Projects openModal={openModal} setOpenModal={setOpenModal} /></div>
+      <div id="ai-showcase"><AIShowcase /></div>
       <div id="contact"><Contact /></div>
       {openModal.state && <ProjectDetails openModal={openModal} setOpenModal={setOpenModal} />}
       <ChatWidget />

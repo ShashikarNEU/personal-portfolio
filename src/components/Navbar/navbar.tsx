@@ -8,10 +8,11 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('about');
   const { theme, toggleTheme } = useTheme();
+  const resumeUrl = 'https://shashikar-s3-bucket.s3.us-east-1.amazonaws.com/ShashikarResumeV1.pdf';
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'experience', 'education', 'skills', 'ai-showcase', 'projects', 'contact'];
+      const sections = ['about', 'experience', 'education', 'skills', 'projects', 'ai-showcase', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -46,14 +47,17 @@ const Navbar = () => {
     { id: 'experience', label: 'Experience' },
     { id: 'education', label: 'Education' },
     { id: 'skills', label: 'Skills' },
-    { id: 'ai-showcase', label: 'AI' },
     { id: 'projects', label: 'Projects' },
+    { id: 'ai-showcase', label: 'Assistant' },
     { id: 'contact', label: 'Contact' }
   ];
 
   return (
     <nav className={styles.navbar}>
-      <a className={styles.title} href="#about" onClick={handleLinkClick}>Portfolio</a>
+      <a className={styles.title} href="#about" onClick={handleLinkClick}>
+        <span className={styles.brandMark}>SA</span>
+        <span>Shashikar Anthoniraj</span>
+      </a>
 
       <div className={styles.menu}>
         <ul className={`${styles.menuItems} ${menuOpen && styles.menuOpen}`} onClick={(e) => e.stopPropagation()}>
@@ -68,12 +72,31 @@ const Navbar = () => {
               </a>
             </li>
           ))}
+          <li className={styles.mobileResumeItem}>
+            <a href={resumeUrl} target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>
+              View Resume
+            </a>
+          </li>
           <li className={styles.mobileThemeToggle}>
             <button onClick={toggleTheme} className={styles.mobileThemeBtn}>
-              {theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode'}
+              {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
             </button>
           </li>
         </ul>
+
+        <a
+          href={resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.resumeLink}
+        >
+          Resume
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M12 3v12" />
+            <path d="m7 10 5 5 5-5" />
+            <path d="M5 21h14" />
+          </svg>
+        </a>
 
         <button
           className={styles.themeToggle}

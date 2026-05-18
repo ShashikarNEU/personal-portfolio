@@ -26,7 +26,7 @@
   width: 28px;
   height: 28px;
   min-width: 28px;
-  border-radius: 50%;
+  border-radius: 8px;
   background: var(--gradient-accent);
   display: flex;
   align-items: center;
@@ -59,7 +59,7 @@
 .user {
   background: var(--gradient-accent);
   color: #fff;
-  border-radius: 16px 16px 4px 16px;
+  border-radius: 14px 14px 4px 14px;
 }
 
 .bot {
@@ -68,7 +68,7 @@
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--color-chat-panel-border);
   color: var(--color-text-secondary);
-  border-radius: 16px 16px 16px 4px;
+  border-radius: 14px 14px 14px 4px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -76,7 +76,7 @@
   background: var(--color-chat-error-bg);
   border: 1px solid var(--color-chat-error-border);
   color: var(--color-chat-error-text);
-  border-radius: 16px 16px 16px 4px;
+  border-radius: 14px 14px 14px 4px;
 }
 
 .errorIcon {

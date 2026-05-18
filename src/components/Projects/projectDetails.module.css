@@ -8,12 +8,17 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: var(--color-overlay);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(93, 214, 172, 0.1), transparent 36%),
+    var(--color-overlay);
   display: flex;
-  align-items: top;
+  align-items: flex-start;
   justify-content: center;
   overflow-y: scroll;
+  padding: 36px 12px;
   transition: all 0.5s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 
@@ -38,47 +43,87 @@
 .wrapper {
   max-width: 800px;
   width: 100%;
-  margin: 50px 12px;
+  margin: 0;
   height: min-content;
-  padding: 20px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   position: relative;
 
-  background: var(--color-bg-card-solid);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02)),
+    var(--color-bg-card-solid);
   border: 1px solid var(--color-border);
   box-shadow: var(--color-card-shadow);
-  border-radius: 16px;
+  border-radius: 20px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+  padding: 6px;
+  border-radius: 12px;
+  color: var(--color-text);
+  background: rgba(5, 8, 20, 0.68);
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.closeButton:hover {
+  color: var(--color-accent);
+  background: rgba(93, 214, 172, 0.12);
 }
 
 .title {
-  font-size: 35px;
-  font-weight: 600;
-  margin: 8px 6px 0px 6px;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 10px 6px 0;
   color: var(--color-text);
+  letter-spacing: -0.035em;
 }
 
 .date {
-  font-size: 16px;
-  margin: 2px 6px;
-  font-weight: 400;
-  color: var(--color-text-muted);
+  font-size: 13px;
+  margin: 8px 6px 2px;
+  font-weight: 800;
+  color: var(--color-accent-text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .desc {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 400;
-  margin: 8px 6px;
-  line-height: 1.8;
+  margin: 14px 6px 8px;
+  line-height: 1.75;
   color: var(--color-text-secondary);
 }
 
 .image {
   width: 100%;
+  max-height: 360px;
   object-fit: cover;
-  border-radius: 12px;
-  margin-top: 30px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  margin-top: 0;
   box-shadow: 0px 0px 10px 0px var(--color-shadow);
+}
+
+.category {
+  align-self: flex-start;
+  margin: 18px 6px 0;
+  padding: 6px 10px;
+  border: 1px solid rgba(93, 214, 172, 0.28);
+  border-radius: 999px;
+  color: var(--color-accent-text);
+  background: rgba(93, 214, 172, 0.08);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .label {
@@ -94,23 +139,23 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 4px;
+  margin: 12px 6px 0;
 }
 
 .tag {
   font-size: 14px;
-  font-weight: 400;
-  color: var(--color-modal-tag-text);
-  background-color: var(--color-modal-tag-bg);
-  padding: 2px 8px;
-  border: 1px solid var(--color-modal-tag-border);
-  border-radius: 10px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.035);
+  padding: 6px 10px;
+  border: 1px solid var(--color-tag-border);
+  border-radius: 999px;
 }
 
 .button-group {
   display: flex;
   justify-content: flex-end;
-  margin: 12px 0px;
+  margin: 18px 6px 4px;
   gap: 12px;
 }
 
@@ -118,14 +163,20 @@
   width: 100%;
   text-align: center;
   font-size: 16px;
-  font-weight: 600;
-  color: var(--color-modal-btn-text);
+  font-weight: 800;
+  color: #061018;
   padding: 12px 16px;
-  border-radius: 8px;
-  background-color: var(--color-modal-btn-bg);
+  border-radius: 12px;
+  background: linear-gradient(90deg, #5dd6ac, #b4ffe7);
   cursor: pointer;
   text-decoration: none;
-  transition: all 0.5s ease;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.button-dull {
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.045);
 }
 
 .button:hover {
@@ -157,5 +208,9 @@
 
   .button {
     font-size: 14px;
+  }
+
+  .button-group {
+    flex-direction: column;
   }
 }

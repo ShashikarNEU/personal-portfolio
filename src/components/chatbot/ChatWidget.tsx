@@ -9,19 +9,28 @@ const DEFAULT_WIDTH = 380;
 const DEFAULT_HEIGHT = 520;
 
 function loadSize(): { w: number; h: number } {
+  const maxW = typeof window === "undefined" ? DEFAULT_WIDTH : window.innerWidth - 48;
+  const maxH = typeof window === "undefined" ? DEFAULT_HEIGHT : window.innerHeight - 120;
+
+  const clampSize = (w: number, h: number) => ({
+    w: Math.min(maxW, Math.max(MIN_WIDTH, w)),
+    h: Math.min(maxH, Math.max(MIN_HEIGHT, h)),
+  });
+
   try {
     const raw = localStorage.getItem("chatbot_panel_size");
     if (raw) {
       const { w, h } = JSON.parse(raw);
-      if (typeof w === "number" && typeof h === "number") return { w, h };
+      if (typeof w === "number" && typeof h === "number") return clampSize(w, h);
     }
   } catch {}
-  return { w: DEFAULT_WIDTH, h: DEFAULT_HEIGHT };
+  return clampSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 }
 
 const ChatWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [hasBeenOpened, setHasBeenOpened] = useState(false);
+  const [voiceMode, setVoiceMode] = useState(false);
   const { messages, isLoading, sendMessage, clearChat, retryLast } = useChat();
 
   const saved = loadSize();
@@ -54,9 +63,9 @@ const ChatWidget: React.FC = () => {
     return () => document.removeEventListener("keydown", handler);
   }, [isOpen, close]);
 
-  // Lock body scroll on mobile when open
+  // Lock body scroll while the dialog is open to avoid layout shift behind it
   useEffect(() => {
-    if (isOpen && window.innerWidth < 640) {
+    if (isOpen) {
       document.body.style.overflow = "hidden";
       return () => {
         document.body.style.overflow = "";
@@ -156,7 +165,13 @@ const ChatWidget: React.FC = () => {
           )}
           {/* Header */}
           <div className={styles.header}>
-            <span className={styles.headerTitle}>AI Assistant</span>
+            <div className={styles.headerIdentity}>
+              <span className={styles.headerMark}>SA</span>
+              <div>
+                <span className={styles.headerTitle}>Shashikar Assistant</span>
+                <span className={styles.headerSubtitle}>Portfolio Q&A, GitHub, and contact</span>
+              </div>
+            </div>
             <div className={styles.headerActions}>
               <button
                 className={styles.headerBtn}
@@ -208,6 +223,8 @@ const ChatWidget: React.FC = () => {
             onSend={sendMessage}
             onRetry={retryLast}
             autoFocusInput={isOpen}
+            voiceMode={voiceMode}
+            onVoiceModeChange={setVoiceMode}
           />
         </div>
       )}

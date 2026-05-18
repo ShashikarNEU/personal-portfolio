@@ -7,32 +7,32 @@
   --font-roboto: "Roboto";
 
   /* === Dark Theme (default) === */
-  --color-bg: #04152d;
-  --color-bg-secondary: #17172c;
-  --color-bg-card: rgba(23, 23, 44, 0.6);
-  --color-bg-card-hover: rgba(23, 23, 44, 0.8);
-  --color-bg-card-solid: #17172c;
+  --color-bg: #050814;
+  --color-bg-secondary: #0b1020;
+  --color-bg-card: rgba(13, 20, 39, 0.66);
+  --color-bg-card-hover: rgba(18, 29, 53, 0.82);
+  --color-bg-card-solid: rgba(13, 20, 39, 0.92);
 
   --color-text: #fff;
-  --color-text-secondary: rgba(255, 255, 255, 0.85);
-  --color-text-muted: rgba(255, 255, 255, 0.7);
-  --color-text-faint: rgba(255, 255, 255, 0.6);
+  --color-text-secondary: rgba(244, 249, 255, 0.88);
+  --color-text-muted: rgba(213, 225, 241, 0.72);
+  --color-text-faint: rgba(193, 207, 225, 0.58);
   --color-text-footer: rgba(255, 255, 255, 0.5);
 
   --color-accent: #5dd6ac;
-  --color-accent-secondary: #2828e9;
+  --color-accent-secondary: #7c5cff;
   --color-accent-text: #5dd6ac;
 
-  --color-border: rgba(93, 214, 172, 0.1);
-  --color-border-hover: rgba(93, 214, 172, 0.3);
-  --color-border-strong: rgba(93, 214, 172, 0.4);
-  --color-border-subtle: rgba(45, 34, 61, 0.5);
-  --color-border-card: 0.1px solid #2d223d;
+  --color-border: rgba(144, 167, 255, 0.14);
+  --color-border-hover: rgba(93, 214, 172, 0.38);
+  --color-border-strong: rgba(93, 214, 172, 0.5);
+  --color-border-subtle: rgba(144, 167, 255, 0.12);
+  --color-border-card: 1px solid rgba(144, 167, 255, 0.14);
 
-  --color-shadow: rgba(0, 0, 0, 0.2);
-  --color-shadow-hover: rgba(0, 0, 0, 0.4);
-  --color-shadow-accent: rgba(93, 214, 172, 0.2);
-  --color-card-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+  --color-shadow: rgba(0, 0, 0, 0.28);
+  --color-shadow-hover: rgba(0, 0, 0, 0.46);
+  --color-shadow-accent: rgba(93, 214, 172, 0.18);
+  --color-card-shadow: rgba(0, 0, 0, 0.28) 0px 18px 55px;
 
   --color-overlay: rgba(0, 0, 0, 0.7);
   --color-overlay-image: rgba(0, 0, 0, 0.8);
@@ -44,18 +44,18 @@
   --color-logo-bg: rgba(255, 255, 255, 0.05);
   --color-logo-border: rgba(255, 255, 255, 0.1);
 
-  --color-timeline-dot-bg: #17172c;
-  --color-timeline-line: linear-gradient(180deg, rgba(93, 214, 172, 0.3) 0%, rgba(40, 40, 233, 0.1) 100%);
-  --color-timeline-arm: linear-gradient(90deg, rgba(93, 214, 172, 0.3), rgba(40, 40, 233, 0.1));
+  --color-timeline-dot-bg: #0b1020;
+  --color-timeline-line: linear-gradient(180deg, rgba(93, 214, 172, 0.48) 0%, rgba(124, 92, 255, 0.16) 100%);
+  --color-timeline-arm: linear-gradient(90deg, rgba(93, 214, 172, 0.42), rgba(124, 92, 255, 0.16));
 
-  --gradient-accent: linear-gradient(90deg, #5dd6ac, #2828e9);
-  --gradient-accent-reverse: linear-gradient(180deg, #5dd6ac, #2828e9);
-  --gradient-accent-reverse-flip: linear-gradient(180deg, #2828e9, #5dd6ac);
-  --gradient-card-glow: linear-gradient(135deg, rgba(93, 214, 172, 0.15), rgba(40, 40, 233, 0.15));
-  --gradient-card-subtle: linear-gradient(135deg, rgba(93, 214, 172, 0.05), rgba(40, 40, 233, 0.05));
-  --gradient-card-bg: linear-gradient(to bottom, transparent, rgba(23, 23, 44, 0.3));
-  --gradient-name: linear-gradient(135deg, #fff 0%, #e0e0e0 50%, #5dd6ac 100%);
-  --gradient-position: linear-gradient(90deg, #5dd6ac, #2828e9);
+  --gradient-accent: linear-gradient(90deg, #5dd6ac 0%, #7c5cff 100%);
+  --gradient-accent-reverse: linear-gradient(180deg, #5dd6ac 0%, #7c5cff 100%);
+  --gradient-accent-reverse-flip: linear-gradient(180deg, #7c5cff 0%, #5dd6ac 100%);
+  --gradient-card-glow: linear-gradient(135deg, rgba(93, 214, 172, 0.18), rgba(124, 92, 255, 0.18));
+  --gradient-card-subtle: linear-gradient(135deg, rgba(93, 214, 172, 0.08), rgba(124, 92, 255, 0.07));
+  --gradient-card-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.035), rgba(13, 20, 39, 0.36));
+  --gradient-name: linear-gradient(135deg, #ffffff 0%, #dbeafe 45%, #5dd6ac 78%, #7c5cff 100%);
+  --gradient-position: linear-gradient(90deg, #5dd6ac 0%, #dbeafe 45%, #7c5cff 100%);
 
   --color-skill-item-bg: rgba(93, 214, 172, 0.03);
   --color-skill-item-border: rgba(93, 214, 172, 0.15);
@@ -88,20 +88,20 @@
   --color-action-btn-bg: rgba(93, 214, 172, 0.2);
   --color-action-btn-hover-bg: rgba(93, 214, 172, 0.3);
 
-  --color-mobile-menu-bg: #17172c;
+  --color-mobile-menu-bg: rgba(9, 14, 30, 0.97);
   --color-mobile-menu-border: rgba(93, 214, 172, 0.2);
   --color-mobile-menu-item-border: rgba(93, 214, 172, 0.1);
   --color-mobile-menu-hover-bg: rgba(93, 214, 172, 0.08);
   --color-mobile-menu-text: rgba(255, 255, 255, 0.85);
 
-  --color-icon-card-gradient: linear-gradient(135deg, rgba(93, 214, 172, 0.2), rgba(40, 40, 233, 0.2));
-  --color-icon-card-hover-gradient: linear-gradient(135deg, rgba(93, 214, 172, 0.3), rgba(40, 40, 233, 0.3));
+  --color-icon-card-gradient: linear-gradient(135deg, rgba(93, 214, 172, 0.18), rgba(124, 92, 255, 0.18));
+  --color-icon-card-hover-gradient: linear-gradient(135deg, rgba(93, 214, 172, 0.28), rgba(124, 92, 255, 0.28));
   --color-icon-card-border: rgba(93, 214, 172, 0.3);
 
   /* Chatbot */
-  --color-chat-panel-bg: rgba(4, 21, 45, 0.97);
-  --color-chat-header-bg: rgba(23, 23, 44, 0.95);
-  --color-chat-input-bg: rgba(23, 23, 44, 0.8);
+  --color-chat-panel-bg: rgba(5, 8, 20, 0.96);
+  --color-chat-header-bg: rgba(9, 14, 30, 0.95);
+  --color-chat-input-bg: rgba(13, 20, 39, 0.82);
   --color-chat-error-bg: rgba(220, 53, 69, 0.12);
   --color-chat-error-border: rgba(220, 53, 69, 0.3);
   --color-chat-error-text: #ff6b6b;
@@ -123,18 +123,18 @@
   --color-badge-email-text: #5dd6ac;
 
   /* Gradient mesh background */
-  --gradient-mesh-1: rgba(87, 108, 188, 0.12);
-  --gradient-mesh-2: rgba(93, 214, 172, 0.08);
-  --gradient-mesh-3: rgba(40, 40, 233, 0.06);
+  --gradient-mesh-1: rgba(124, 92, 255, 0.16);
+  --gradient-mesh-2: rgba(93, 214, 172, 0.1);
+  --gradient-mesh-3: rgba(15, 185, 253, 0.08);
 }
 
 /* === Light Theme === */
 [data-theme="light"] {
-  --color-bg: #f8f9fa;
+  --color-bg: #f6f8fb;
   --color-bg-secondary: #ffffff;
-  --color-bg-card: rgba(255, 255, 255, 0.8);
-  --color-bg-card-hover: rgba(255, 255, 255, 0.95);
-  --color-bg-card-solid: #ffffff;
+  --color-bg-card: rgba(255, 255, 255, 0.72);
+  --color-bg-card-hover: rgba(255, 255, 255, 0.9);
+  --color-bg-card-solid: rgba(255, 255, 255, 0.94);
 
   --color-text: #1a1a2e;
   --color-text-secondary: rgba(26, 26, 46, 0.85);

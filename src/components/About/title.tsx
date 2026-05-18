@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import styles from './about.module.css';
 
 const Title = () => {
-  const titles = useMemo(() => ['Full Stack Developer', 'Software Engineer'], []); // Memoize titles
+  const titles = useMemo(() => ['Backend Software Engineer', 'Cloud & API Systems Builder'], []);
   const [currentTitle, setCurrentTitle] = useState('');
   const [titleIndex, setTitleIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
@@ -33,10 +33,10 @@ const Title = () => {
   }, [charIndex, isDeleting, titleIndex, titles]);
 
   return (
-    <h1 className={styles.position1}>
+    <span className={styles.position1}>
       {currentTitle}
       <span className={styles.cursor}>|</span> 
-    </h1>
+    </span>
   );
 };
 

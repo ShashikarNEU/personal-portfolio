@@ -150,7 +150,7 @@ App runs at `http://localhost:3000`.
 
 | Variable | Description | Default |
 |---|---|---|
-| `REACT_APP_API_URL` | Backend API base URL | `http://localhost:8000` |
+| `REACT_APP_API_URL` | Optional backend API base URL override | Render backend |
 
 ### Build
 

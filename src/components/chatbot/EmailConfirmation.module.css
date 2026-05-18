@@ -6,7 +6,7 @@
   z-index: 20;
   background: rgba(14, 45, 30, 0.92);
   border: 1px solid rgba(93, 214, 172, 0.35);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 12px 14px 14px;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -31,7 +31,7 @@
   justify-content: center;
   width: 28px;
   height: 28px;
-  border-radius: 50%;
+  border-radius: 8px;
   background: rgba(93, 214, 172, 0.18);
   color: #5dd6ac;
   font-size: 14px;

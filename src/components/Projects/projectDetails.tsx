@@ -10,22 +10,18 @@ interface ProjectDetailsProps {
 
 const ProjectDetails: React.FC<ProjectDetailsProps> = ({ openModal, setOpenModal }) => {
   const project = openModal?.project;
+  if (!project) return null;
 
   return (
     <Modal open={openModal.state} onClose={() => setOpenModal({ state: false, project: null })}>
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <CloseRounded
-            style={{
-              position: 'absolute',
-              top: '10px',
-              right: '20px',
-              cursor: 'pointer',
-              color: 'var(--color-text)',
-            }}
+            className={styles.closeButton}
             onClick={() => setOpenModal({ state: false, project: null })}
           />
-          <img className={styles.image} src={require(`../../assets/projects/${project.image}`)} alt="project details" />
+          <img className={styles.image} src={require(`../../assets/projects/${project.image}`)} alt={`${project.title} project preview`} />
+          <span className={styles.category}>{project.category}</span>
           <h2 className={styles.title}>{project.title}</h2>
           <div className={styles.date}>{project.date}</div>
           <div className={styles.tags}>

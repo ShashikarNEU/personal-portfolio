@@ -2,9 +2,15 @@
 
 .App {
   background-color: var(--color-bg);
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 22%),
+    linear-gradient(90deg, rgba(93, 214, 172, 0.035) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(124, 92, 255, 0.028) 1px, transparent 1px);
+  background-size: auto, 96px 96px, 96px 96px;
   width: 100%;
   height: 100%;
   position: relative;
+  overflow-x: clip;
 
   color: var(--color-text);
   scroll-behavior: smooth;
@@ -18,11 +24,21 @@
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 60% 50% at 15% 30%, var(--gradient-mesh-1), transparent),
-    radial-gradient(ellipse 50% 60% at 85% 15%, var(--gradient-mesh-2), transparent),
-    radial-gradient(ellipse 70% 50% at 50% 80%, var(--gradient-mesh-3), transparent);
+    radial-gradient(ellipse 50% 42% at 18% 18%, var(--gradient-mesh-1), transparent 70%),
+    radial-gradient(ellipse 44% 50% at 84% 12%, var(--gradient-mesh-2), transparent 72%),
+    radial-gradient(ellipse 60% 42% at 55% 78%, var(--gradient-mesh-3), transparent 74%);
   animation: meshDrift 25s ease-in-out infinite alternate;
   will-change: transform;
+}
+
+.App > div[id],
+.App > nav {
+  position: relative;
+  z-index: 1;
+}
+
+.App > div[id] {
+  scroll-margin-top: 108px;
 }
 
 @keyframes meshDrift {

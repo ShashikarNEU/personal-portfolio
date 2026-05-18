@@ -2,9 +2,15 @@ import React, { useEffect, useRef, useState } from 'react';
 import styles from './education.module.css';
 import EducationHistory from '../../data/education.json';
 
+const getCredentialType = (degree: string) => {
+  if (degree.toLowerCase().includes('ms')) return 'Graduate';
+  if (degree.toLowerCase().includes('b.tech')) return 'Undergraduate';
+  return 'Credential';
+};
+
 const Education: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const currentSection = sectionRef.current;
@@ -33,49 +39,65 @@ const Education: React.FC = () => {
 
   return (
     <section ref={sectionRef} className={`${styles.container} ${isVisible ? styles.visible : ''}`}>
-      <h2 className={styles.title}>Education</h2>
+      <div className={styles.header}>
+        <h2 className={styles.title}>Education</h2>
+        <p className={styles.subtitle}>
+          Academic foundation behind the backend, cloud, and systems work.
+        </p>
+      </div>
       <div className={styles.content}>
-        <ul className={styles.educationHistory}>
+        <ul className={styles.credentialGrid}>
           {EducationHistory.map((education, index) => {
             return (
               <li
-                className={`${styles.historyItem} ${isVisible ? styles.itemVisible : ''}`}
+                className={`${styles.credentialCard} ${isVisible ? styles.itemVisible : ''}`}
                 style={{ animationDelay: `${index * 0.15}s` }}
-                key={index}
+                key={`${education.school}-${education.degree}`}
               >
-                <div className={styles.historyItemDetails}>
-                  <img
-                    className={styles.logoStyle}
-                    src={require(`../../assets/education/${education.imageLogo}`)}
-                    alt={`${education.school} logo`}
-                    loading="lazy"
-                  />
-                  <div className={styles.educationHistoryTitle}>
+                <article className={styles.cardInner}>
+                  <div className={styles.cardTop}>
+                    <div className={styles.logoFrame}>
+                      <img
+                        className={styles.logoStyle}
+                        src={require(`../../assets/education/${education.imageLogo}`)}
+                        alt={`${education.school} logo`}
+                        loading="lazy"
+                      />
+                    </div>
+                    <span className={styles.credentialType}>{getCredentialType(education.degree)}</span>
+                  </div>
+
+                  <div className={styles.degreeBlock}>
                     <h3 className={styles.degree}>{education.degree}</h3>
                     <p className={styles.school}>{education.school}</p>
-                    <div className={styles.metaRow}>
-                      <span className={styles.dateBadge}>
-                        📅 {education.startDate} — {education.endDate}
-                      </span>
-                      <span className={styles.locationBadge}>
-                        📍 {education.place}
-                      </span>
-                      <span className={styles.gpaBadge}>
-                        🎓 GPA: {education.gpa}
-                      </span>
-                    </div>
-                    {education.coursework && education.coursework.length > 0 && (
-                      <div className={styles.coursework}>
-                        <span className={styles.courseworkLabel}>Key Coursework:</span>
-                        <div className={styles.courseworkTags}>
-                          {education.coursework.map((course: string, idx: number) => (
-                            <span key={idx} className={styles.courseworkTag}>{course}</span>
-                          ))}
-                        </div>
-                      </div>
-                    )}
                   </div>
-                </div>
+
+                  <div className={styles.metaGrid}>
+                    <div className={styles.metaCard}>
+                      <span className={styles.metaLabel}>Date</span>
+                      <span>{education.startDate} - {education.endDate}</span>
+                    </div>
+                    <div className={styles.metaCard}>
+                      <span className={styles.metaLabel}>Campus</span>
+                      <span>{education.place}</span>
+                    </div>
+                    <div className={styles.metaCard}>
+                      <span className={styles.metaLabel}>GPA</span>
+                      <span>{education.gpa}</span>
+                    </div>
+                  </div>
+
+                  {education.coursework && education.coursework.length > 0 && (
+                    <div className={styles.coursework}>
+                      <span className={styles.courseworkLabel}>Relevant coursework</span>
+                      <div className={styles.courseworkTags}>
+                        {education.coursework.map((course: string) => (
+                          <span key={course} className={styles.courseworkTag}>{course}</span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </article>
               </li>
             )
           }

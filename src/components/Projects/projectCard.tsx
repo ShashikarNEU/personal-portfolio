@@ -17,27 +17,16 @@ interface ProjectProps {
 }
 
 const ProjectCard: React.FC<ProjectProps> = ({ project, setOpenModal }) => {
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      setOpenModal({ state: true, project });
-    }
-  };
-
   const handleExternalLink = (e: React.MouseEvent, url: string) => {
+    e.preventDefault();
     e.stopPropagation();
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
+  const openDetails = () => setOpenModal({ state: true, project });
+
   return (
-    <div 
-      className={styles.card} 
-      onClick={() => setOpenModal({ state: true, project })}
-      onKeyDown={handleKeyDown}
-      role="button"
-      tabIndex={0}
-      aria-label={`View details for ${project.title} project`}
-    >
+    <article className={styles.card}>
       <div className={styles.imageContainer}>
         <div className={styles.imageOverlay}>
           <div className={styles.actionButtons}>
@@ -77,8 +66,8 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, setOpenModal }) => {
       </div>
       <div className={styles.cardContent}>
         <div className={styles.cardHeader}>
-          <h3 className={styles.title}>{project.title}</h3>
           <span className={styles.date}>{project.date}</span>
+          <h3 className={styles.title}>{project.title}</h3>
         </div>
         <p className={styles.description}>{project.description}</p>
         <div className={styles.tags} role="list">
@@ -89,8 +78,22 @@ const ProjectCard: React.FC<ProjectProps> = ({ project, setOpenModal }) => {
             <div className={styles.tagMore}>+{project.tags.length - 4}</div>
           )}
         </div>
+        <div className={styles.cardFooter}>
+          <button
+            type="button"
+            className={styles.detailsBtn}
+            onClick={openDetails}
+            aria-label={`View details for ${project.title} project`}
+          >
+            View Project
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M5 12h14" />
+              <path d="m13 6 6 6-6 6" />
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
+    </article>
   );
 };
 

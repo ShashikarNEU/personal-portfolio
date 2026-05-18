@@ -12,7 +12,6 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 const getInitialTheme = (): Theme => {
     const stored = localStorage.getItem('portfolio-theme');
     if (stored === 'light' || stored === 'dark') return stored;
-    if (window.matchMedia?.('(prefers-color-scheme: light)').matches) return 'light';
     return 'dark';
 };
 

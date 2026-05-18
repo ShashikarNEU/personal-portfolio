@@ -41,10 +41,25 @@ const Projects: React.FC<ProjectsProps> = ({ openModal, setOpenModal }) => {
     <section ref={sectionRef} className={`${styles.container} ${isVisible? styles.visible:''}`}>
       <div className={styles.wrapper}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Featured Projects</h2>
-          <p className={styles.subtitle}>
-            A collection of projects showcasing my skills in full-stack development, cloud computing, and system design.
-          </p>
+          <div>
+            <span className={styles.eyebrow}>Selected engineering work</span>
+            <h2 className={styles.title}>Featured Projects</h2>
+            <p className={styles.subtitle}>
+              Backend, cloud, location-aware product work, and assistant systems — presented with equal weight so recruiters can scan the full range quickly.
+            </p>
+          </div>
+          <a
+            href="https://github.com/ShashikarNEU"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.githubCta}
+          >
+            View GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M7 17 17 7" />
+              <path d="M7 7h10v10" />
+            </svg>
+          </a>
         </div>
         <div className={styles.cardContainer}>
           {projects.map((project, index) => (

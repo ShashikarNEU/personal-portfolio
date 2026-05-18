@@ -12,12 +12,14 @@ interface ChatPanelProps {
   onSend: (text: string) => void;
   onRetry: () => void;
   autoFocusInput: boolean;
+  voiceMode: boolean;
+  onVoiceModeChange: (enabled: boolean) => void;
 }
 
 const SUGGESTIONS = [
-  "What are his top skills?",
+  "What makes him a strong backend engineer?",
   "Explore his GitHub",
-  "Tell me about his projects",
+  "Show me his best projects",
   "Contact Shashikar",
 ];
 
@@ -27,11 +29,64 @@ const ChatPanel: React.FC<ChatPanelProps> = ({
   onSend,
   onRetry,
   autoFocusInput,
+  voiceMode,
+  onVoiceModeChange,
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [showEmailToast, setShowEmailToast] = useState(false);
+  const [speechOutputSupported, setSpeechOutputSupported] = useState(false);
   const lastSeenEmailMsgId = useRef<string | null>(null);
+  const lastSpokenMsgId = useRef<string | null>(null);
   const scrollThrottleRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    setSpeechOutputSupported(
+      typeof window !== "undefined" &&
+      "speechSynthesis" in window &&
+      "SpeechSynthesisUtterance" in window
+    );
+
+    return () => {
+      window.speechSynthesis?.cancel();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!voiceMode || !speechOutputSupported) {
+      window.speechSynthesis?.cancel();
+      return;
+    }
+
+    const latestBotMessage = [...messages]
+      .reverse()
+      .find(
+        (message) =>
+          message.role === "bot" &&
+          !message.isStreaming &&
+          !message.isError &&
+          message.id !== "welcome" &&
+          Boolean(message.text.trim())
+      );
+
+    if (!latestBotMessage || latestBotMessage.id === lastSpokenMsgId.current) {
+      return;
+    }
+
+    lastSpokenMsgId.current = latestBotMessage.id;
+    window.speechSynthesis.cancel();
+
+    const utterance = new SpeechSynthesisUtterance(
+      latestBotMessage.text
+        .replace(/\*\*/g, "")
+        .replace(/\[[^\]]+\]\(([^)]+)\)/g, "$1")
+        .replace(/\s+/g, " ")
+        .trim()
+    );
+    utterance.rate = 0.95;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+    window.speechSynthesis.speak(utterance);
+  }, [messages, speechOutputSupported, voiceMode]);
 
   // Detect new emailSent messages and show toast
   useEffect(() => {
@@ -91,16 +146,22 @@ const ChatPanel: React.FC<ChatPanelProps> = ({
         })}
 
         {showChips && (
-          <div className={styles.chips}>
-            {SUGGESTIONS.map((s) => (
-              <button
-                key={s}
-                className={styles.chip}
-                onClick={() => onSend(s)}
-              >
-                {s}
-              </button>
-            ))}
+          <div className={styles.emptyState}>
+            <p className={styles.emptyIntro}>
+              Ask for a recruiter summary, project details, GitHub context, or help contacting Shashikar.
+            </p>
+            <span className={styles.emptyKicker}>Try a recruiter-style prompt</span>
+            <div className={styles.chips}>
+              {SUGGESTIONS.map((s) => (
+                <button
+                  key={s}
+                  className={styles.chip}
+                  onClick={() => onSend(s)}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
           </div>
         )}
       </div>
@@ -109,6 +170,9 @@ const ChatPanel: React.FC<ChatPanelProps> = ({
         onSend={onSend}
         isLoading={isLoading}
         autoFocus={autoFocusInput}
+        voiceMode={voiceMode}
+        onVoiceModeChange={onVoiceModeChange}
+        speechOutputSupported={speechOutputSupported}
       />
     </div>
   );
