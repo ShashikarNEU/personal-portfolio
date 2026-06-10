@@ -6,12 +6,14 @@ const getImpactSignals = (items: string[]) => {
   const text = items.join(' ').toLowerCase();
   const signals = [
     { label: 'Backend systems', terms: ['spring boot', 'api', 'postgresql', 'microservices'] },
-    { label: 'Cloud delivery', terms: ['aws', 'ci/cd', 'pipelines'] },
+    { label: 'Cloud delivery', terms: ['aws', 'ci/cd', 'pipelines', 's3'] },
+    { label: 'Containers', terms: ['docker', 'kubernetes', 'auto-scaling'] },
     { label: 'Testing discipline', terms: ['tdd', 'junit', 'mockito', 'test'] },
     { label: 'Performance', terms: ['latency', 'page load', 'efficiency', 'sub-200ms'] },
     { label: 'Applied AI', terms: ['langchain', 'openai', 'semantic', 'ai-powered'] },
     { label: 'Auth & reliability', terms: ['oauth', 'jwt', 'incidents', 'root cause'] },
-    { label: 'Product tooling', terms: ['react', 'dashboard', 'admin ui'] },
+    { label: 'API contracts', terms: ['openapi', 'cors', 'payload'] },
+    { label: 'Product tooling', terms: ['react', 'dashboard', 'admin ui', 'frontend'] },
     { label: 'Automation', terms: ['python', 'sql', 'cron', 'automated'] },
   ];
 

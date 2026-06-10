@@ -6,10 +6,10 @@
     "endDate": "Present",
     "location": "San Jose, CA",
     "experiences": [
-      "Owned backend services for volunteer onboarding, designing Spring Boot APIs and PostgreSQL schemas to support multi-step workflows with sub-200ms latency for 500+ active users",
-      "Built responsive React dashboard for volunteer management, implementing Redux state management and real-time status updates, reducing page load time by 40%",
-      "Contributed to AWS-based microservices architecture, resolving 15+ merge conflicts and stabilizing CI/CD pipelines across releases",
-      "Integrated AI-powered workflows using LangChain and OpenAI API for automated volunteer matching, implementing semantic search and intelligent recommendations that improved match accuracy by 35%"
+      "Owned volunteer onboarding end-to-end, building Spring Boot APIs and PostgreSQL schemas for multi-step workflows with sub-200ms p95 latency at 500+ active volunteers",
+      "Engineered secure profile image uploads via AWS S3 pre-signed URLs, eliminating server-side file handling and unblocking multipart uploads up to 5MB",
+      "Refactored CI/CD pipelines across AWS microservices, eliminating recurring merge conflicts and reducing failed deploys over 15+ releases",
+      "Containerized microservices in Docker on Kubernetes with auto-scaling, cutting deployment from 30 minutes to under 5 and enabling same-day hotfixes"
     ],
     "imageLogo": "saayam-logo.png"
   },
@@ -20,12 +20,12 @@
     "endDate": "Jul, 2023",
     "location": "Chennai, India",
     "experiences": [
-      "Developed Spring Boot microservices for payment and delivery integrations using TDD and Pair Programming in an Agile-XP environment, improving efficiency by 25%",
-      "Automated order-expiry workflows using Python, SQL, and cron jobs with retries and alerting, reducing data inconsistencies by 30% and manual intervention by 40%",
-      "Implemented OAuth 2.0 and JWT-based authentication across multiple services, cutting auth-related incidents by 40%",
-      "Wrote JUnit and Mockito test suites using a Test-first approach, reducing production defects by 25% across 200+ integration scenarios",
-      "Built internal React-based admin UI components for order monitoring and failure triage, improving operational visibility and reducing investigation time for support teams",
-      "Performed root cause analysis on 100+ customer issues, collaborating cross-functionally and tracking resolutions in JIRA"
+      "Shipped payment and delivery integration microservices in Spring Boot, applying TDD and pair programming in an Agile-XP environment to lift sprint throughput by 25%",
+      "Automated order-expiry workflows in Python with retries and alerting, eliminating 40% of manual ops and cutting data inconsistencies by 30%",
+      "Rolled out OAuth 2.0 and JWT authentication across the payments service mesh, cutting auth-related production incidents by 40%",
+      "Authored JUnit and Mockito test suites covering 200+ integration scenarios under a test-first approach, reducing production defects by 25%",
+      "Defined REST API contracts with frontend engineers via OpenAPI specs, eliminating a recurring class of CORS and payload bugs during release windows",
+      "Drove root cause analysis on 100+ production incidents across payment flows, partnering with QA to ship preventive fixes that eliminated top recurring failure modes"
     ],
     "imageLogo": "Ford-Logo-2.png"
   }
