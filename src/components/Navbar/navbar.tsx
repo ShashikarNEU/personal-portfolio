@@ -3,12 +3,12 @@ import styles from './navbar.module.css';
 import menuIcon from '../../assets/nav/menuIcon.png';
 import closeIcon from '../../assets/nav/closeIcon.png';
 import { useTheme } from '../../context/ThemeContext';
+import { RESUME_URL } from '../../utils';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('about');
   const { theme, toggleTheme } = useTheme();
-  const resumeUrl = 'https://shashikar-s3-bucket.s3.us-east-1.amazonaws.com/ShashikarResumeV1.pdf';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,7 +73,7 @@ const Navbar = () => {
             </li>
           ))}
           <li className={styles.mobileResumeItem}>
-            <a href={resumeUrl} target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>
+            <a href={RESUME_URL} target="_blank" rel="noopener noreferrer" onClick={handleLinkClick}>
               View Resume
             </a>
           </li>
@@ -85,7 +85,7 @@ const Navbar = () => {
         </ul>
 
         <a
-          href={resumeUrl}
+          href={RESUME_URL}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.resumeLink}

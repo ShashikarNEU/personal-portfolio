@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styles from './about.module.css';
 import Title from './title';
+import { RESUME_URL } from '../../utils';
 
 const proofPoints = [
   { value: '2.5+', label: 'Years building production software' },
@@ -46,7 +47,7 @@ const About = () => {
             ))}
           </div>
           <div className={styles.actions}>
-            <a href="https://shashikar-s3-bucket.s3.us-east-1.amazonaws.com/ShashikarResumeV1.pdf" className={styles.resumeBtn} target="_blank" rel="noopener noreferrer">
+            <a href={RESUME_URL} className={styles.resumeBtn} target="_blank" rel="noopener noreferrer">
               View Resume
             </a>
             <a href="mailto:anthoniraj.s@northeastern.edu" className={styles.contactBtn}>
